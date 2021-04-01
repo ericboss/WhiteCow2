@@ -1,0 +1,153 @@
+{% load static %} {% load socialaccount %}
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="{% url 'index' %}">WHITE COW</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      {% if user.is_authenticated %}
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'index' %}"
+            >HOME <span class="sr-only">(current)</span></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'deals-new' %}">DEAL</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">ABOUT US</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">CONTACT US</a>
+        </li>
+      </ul>
+
+      <div id="Profile" class="UserProfile">
+        <div class="userpicture">
+          <img
+            class="rounded-circle avatar"
+            src="{{ user.profile.image.url }}"
+            alt="about us"
+          />
+        </div>
+        <div class="dropdowprofile"><i class="fas fa-caret-down"></i></div>
+        <div id="userdropdox" class="useraction">
+          <div class="usersect"><a href="{% url 'profile' %}">Profile</a></div>
+          <div class="usersect"><a href="{% url 'subscriptions' %}">Subscriptions</a></div>
+          <div class="usersect"><a href="{% url 'logout' %}">Sign Out</a></div>
+        </div>
+      </div>
+      {% else %}
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'index' %}"
+            >HOME <span class="sr-only">(current)</span></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">ABOUT US</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">CONTACT US</a>
+        </li>
+      </ul>
+      <div id="authbox" class="auth">
+        <div class="signin">
+          <img
+            class="Imgsignin"
+            src="{% static 'deal/images/sigin.png' %}"
+            alt=""
+          />
+          <a id="signin" href="javascript:void(0)">SIGN IN</a>
+        </div>
+        <div class="signup">
+          <img
+            class="Imgsignin"
+            src="{% static 'deal/images/newacount.png' %}"
+            alt=""
+          />
+          <a id="signup" href="javascript:void(0)">SIGN UP</a>
+        </div>
+
+        <div id="dropdown" class="AuthForm">
+          {% load crispy_forms_tags %}
+          <div>
+            <form method="POST" class="signInform">
+              {% csrf_token %}
+              <fieldset class="form-group">{{ form|crispy }}</fieldset>
+              <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">
+                  Login
+                </button>
+                <small class="text-muted ml-2">
+                  <a href="{% url 'password_reset' %}">Forgot Password?</a>
+                </small>
+              </div>
+            </form>
+            <small class="loginWithtxt">
+              Sign In with
+              <a href="{% provider_login_url 'github' %}">
+                <img
+                  class="icon"
+                  src="{% static 'deal/images/github.png' %}"
+                  alt="instagramabout us"
+                />
+                Github
+              </a>
+              <a href="{% provider_login_url 'google' %}">
+                <img
+                  class="icon"
+                  src="{% static 'deal/images/google.png' %}"
+                  alt="instagramabout us"
+                />Google </a
+              ><br />
+            </small>
+            <div class="border-top pt-3">
+              <small class="text-muted">
+                Need An Anccount ?
+                <a class="ml-2" href="{% url 'register' %}">Sign Up Now</a>
+              </small>
+            </div>
+          </div>
+        </div>
+
+        <div id="dropdownSignup" class="AuthForm">
+          <form method="POST" class="signInform">
+            {% csrf_token %}
+            <fieldset class="form-group">
+              <legend class="border-bottom mb-4">Join Today</legend>
+              {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+              <button class="btn btn-outline-info" type="submit">
+                Sign Up
+              </button>
+            </div>
+          </form>
+          <div class="border-top pt-3">
+            <small class="text-muted">
+              Already Have An Anccount ?
+              <a class="ml-2" href="{% url 'login' %}">Log In Now</a>
+            </small>
+          </div>
+        </div>
+      </div>
+
+      {% endif %}
+    </div>
+  </nav>
+</div>
