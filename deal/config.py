@@ -1,4 +1,4 @@
-api_key="75e6471139msh52cb1e1fa24f4fbp1bde4fjsndac2f426cc03"
+api_key="86c582a444mshab54512034c29efp11e0f4jsnb96596b0c6f6"
 host = "realtor.p.rapidapi.com"
 url_for_sale = "https://realtor.p.rapidapi.com/properties/v2/list-for-sale"
 url_for_rent = "https://realtor.p.rapidapi.com/properties/v2/list-for-rent"

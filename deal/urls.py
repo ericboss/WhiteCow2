@@ -16,7 +16,7 @@ urlpatterns = [
     path('deals/save_refresh/<int:pk>/', views.save_refresh, name = 'save_refresh'),
     path('deals/delete/<int:pk>/', views.delete, name = 'delete'),
      path('deals/detail/<int:pk>/', views.detail, name = 'display_detail'),
-    path('deals/deal/<int:pk>/', views.deal_diaplay_specific_search_id, name = 'display_specific'),
+  #  path('deals/deal/<int:pk>/', views.deal_diaplay_specific_search_id, name = 'display_specific'),
   
     path('',views.videos)
 

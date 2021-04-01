@@ -4637,3 +4637,24 @@ Traceback (most recent call last):
     data = get_data()
 TypeError: 'NoneType' object is not callable
 ERROR 2021-03-31 20:39:21,794 basehttp 14450 123145601060864 "GET /deals/display/ HTTP/1.1" 500 62625
+ERROR 2021-04-01 16:36:36,219 view_method 9607 123145406222336 Error in making API request 
+ERROR 2021-04-01 16:36:36,234 view_method 9607 123145406222336 Response is empty
+ERROR 2021-04-01 16:36:36,234 view_method 9607 123145406222336 Response json is empty
+ERROR 2021-04-01 16:36:37,428 view_method 9607 123145406222336 Error in making API request 
+ERROR 2021-04-01 16:36:37,429 view_method 9607 123145406222336 Response is empty
+ERROR 2021-04-01 16:36:37,429 view_method 9607 123145406222336 Response json is empty
+ERROR 2021-04-01 16:36:37,429 view_method 9607 123145406222336 No dataframe to filter
+ERROR 2021-04-01 16:36:37,541 log 9607 123145406222336 Internal Server Error: /deals/new/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 81, in make_query
+    query = formatting(property_status=deal_data['property_status'], params=params
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/view_method.py", line 224, in formatting
+    df = percentage_average_market_data(property_status=property_status, params=params, period=period, compare=compare, percentage=percentage)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/view_method.py", line 208, in percentage_average_market_data
+    p_value = average_price - ((percentage/100) * average_price)
+TypeError: unsupported operand type(s) for *: 'float' and 'NoneType'
+ERROR 2021-04-01 16:36:37,545 basehttp 9607 123145406222336 "POST /deals/new/ HTTP/1.1" 500 79764
