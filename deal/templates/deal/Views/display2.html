@@ -24,6 +24,7 @@
         Price: ${{b.price}}
         beds:{{b.beds}}
         bath:{{b.baths}}
+        
         {%endfor%}
 
       {% else %}
@@ -32,6 +33,7 @@
         Price Range: {{b.community.price_min}}-{{b.community.price_max}}
         beds:{{b.community.beds_min}} - {{b.community.beds_max}}
         bath:{{b.community.baths_min}} - {{b.community.baths_max}}
+        <img src="https://ar.rdcpix.com/e87f60f8ebb03d41a38baa65bdf42e9cc-f3121430589o.jpg" alt="">
       </a>
       {%endfor%}
 

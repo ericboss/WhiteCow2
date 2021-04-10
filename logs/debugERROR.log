@@ -4658,3 +4658,264 @@ Traceback (most recent call last):
     p_value = average_price - ((percentage/100) * average_price)
 TypeError: unsupported operand type(s) for *: 'float' and 'NoneType'
 ERROR 2021-04-01 16:36:37,545 basehttp 9607 123145406222336 "POST /deals/new/ HTTP/1.1" 500 79764
+ERROR 2021-04-02 19:22:52,915 log 21024 123145603067904 Internal Server Error: /deals/save/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 174, in saveDeal
+    data = get_data()
+TypeError: 'NoneType' object is not callable
+ERROR 2021-04-02 19:22:52,919 basehttp 21024 123145603067904 "GET /deals/save/ HTTP/1.1" 500 62912
+ERROR 2021-04-02 19:35:17,642 log 21184 123145347461120 Internal Server Error: /deals/detail/2/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 495, in detail
+    data = get_data()[2]
+TypeError: 'NoneType' object is not callable
+ERROR 2021-04-02 19:35:17,647 basehttp 21184 123145347461120 "GET /deals/detail/2/ HTTP/1.1" 500 63119
+ERROR 2021-04-03 05:49:25,745 log 25961 123145522991104 Internal Server Error: /deals/view/specific/11/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 407, in detail_view_deal
+    d = [
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 410, in <listcomp>
+    for i,colname in enumerate(data.columns)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/pandas/core/generic.py", line 5462, in __getattr__
+    return object.__getattribute__(self, name)
+AttributeError: 'Series' object has no attribute 'columns'
+ERROR 2021-04-03 05:49:25,762 basehttp 25961 123145522991104 "GET /deals/view/specific/11/ HTTP/1.1" 500 78275
+ERROR 2021-04-03 05:50:45,898 log 26003 123145376768000 Internal Server Error: /deals/view/specific/8/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 414, in detail_view_deal
+    data=ujson.dumps(d)
+TypeError: 51 is not JSON serializable
+ERROR 2021-04-03 05:50:45,901 basehttp 26003 123145376768000 "GET /deals/view/specific/8/ HTTP/1.1" 500 71654
+ERROR 2021-04-03 05:51:01,710 log 26003 123145376768000 Internal Server Error: /deals/view/specific/10/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 414, in detail_view_deal
+    data=ujson.dumps(d)
+TypeError: 41 is not JSON serializable
+ERROR 2021-04-03 05:51:01,713 basehttp 26003 123145376768000 "GET /deals/view/specific/10/ HTTP/1.1" 500 71641
+ERROR 2021-04-03 05:54:06,558 log 26096 123145367228416 Internal Server Error: /deals/view/specific/10/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 415, in detail_view_deal
+    data=ujson.dumps(d , cls=DjangoJSONEncoder)
+TypeError: 'cls' is an invalid keyword argument for this function
+ERROR 2021-04-03 05:54:06,560 basehttp 26096 123145367228416 "GET /deals/view/specific/10/ HTTP/1.1" 500 71090
+ERROR 2021-04-03 05:59:55,214 log 26262 123145471127552 Internal Server Error: /deals/view/specific/14/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 417, in detail_view_deal
+    data=ujson.dumps(d , default=convert)
+TypeError: 'default' is an invalid keyword argument for this function
+ERROR 2021-04-03 05:59:55,220 basehttp 26262 123145471127552 "GET /deals/view/specific/14/ HTTP/1.1" 500 71835
+ERROR 2021-04-03 06:00:41,679 log 26313 123145396170752 Internal Server Error: /deals/view/specific/1/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 417, in detail_view_deal
+    data=json.dumps(d , default=convert)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 393, in convert
+    if isinstance(o, numpy.int64): return int(o)
+NameError: name 'numpy' is not defined
+ERROR 2021-04-03 06:00:41,847 basehttp 26313 123145396170752 "GET /deals/view/specific/1/ HTTP/1.1" 500 109058
+ERROR 2021-04-03 06:06:08,900 log 26540 123145353883648 Internal Server Error: /deals/view/specific/9/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 397, in detail_view_deal
+    deal = detail_deal()
+TypeError: 'NoneType' object is not callable
+ERROR 2021-04-03 06:06:08,902 basehttp 26540 123145353883648 "GET /deals/view/specific/9/ HTTP/1.1" 500 63294
+ERROR 2021-04-03 06:06:18,219 log 26540 123145353883648 Internal Server Error: /deals/view/specific/15/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 417, in detail_view_deal
+    data=ujson.dumps(d , default=str, indent=4)
+TypeError: 'default' is an invalid keyword argument for this function
+ERROR 2021-04-03 06:06:18,258 basehttp 26540 123145353883648 "GET /deals/view/specific/15/ HTTP/1.1" 500 71832
+ERROR 2021-04-03 06:12:56,624 log 26688 123145450008576 Internal Server Error: /deals/view/specific/12/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 410, in detail_view_deal
+    parsed = json.loads(data)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 339, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not DataFrame
+ERROR 2021-04-03 06:12:56,639 basehttp 26688 123145450008576 "GET /deals/view/specific/12/ HTTP/1.1" 500 73278
+ERROR 2021-04-03 06:16:33,322 log 26887 123145506275328 Internal Server Error: /deals/view/specific/3/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 397, in detail_view_deal
+    deal = detail_deal()
+TypeError: 'NoneType' object is not callable
+ERROR 2021-04-03 06:16:33,324 basehttp 26887 123145506275328 "GET /deals/view/specific/3/ HTTP/1.1" 500 63431
+ERROR 2021-04-03 06:38:48,924 log 27188 123145357029376 Internal Server Error: /deals/view/specific/12/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 424, in detail_view_deal
+    return render(request, 'deal/Views/detail_deal_specific.html', {'data':data})
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 449, in parse
+    raise self.error(token, e)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 447, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 563, in compile_filter
+    return FilterExpression(token, self)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 662, in __init__
+    raise TemplateSyntaxError("Could not parse the remainder: '%s' "
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '["id"]' from 'data["id"]'
+ERROR 2021-04-03 06:38:48,936 basehttp 27188 123145357029376 "GET /deals/view/specific/12/ HTTP/1.1" 500 147129
+ERROR 2021-04-05 17:53:39,951 log 27511 123145354498048 Internal Server Error: /deals/display/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 106, in display_search_query
+    data = get_data()
+TypeError: 'NoneType' object is not callable
+ERROR 2021-04-05 17:53:39,958 basehttp 27511 123145354498048 "GET /deals/display/ HTTP/1.1" 500 64302
+ERROR 2021-04-05 17:53:50,352 view_method 27511 123145354498048 Error in making API request 
+ERROR 2021-04-05 17:53:50,354 view_method 27511 123145354498048 Response is empty
+ERROR 2021-04-05 17:53:50,354 view_method 27511 123145354498048 Response json is empty
+ERROR 2021-04-05 17:53:50,354 view_method 27511 123145354498048 No dataframe to filter
+ERROR 2021-04-05 17:53:51,247 log 27511 123145354498048 Internal Server Error: /deals/new/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 83, in make_query
+    query = formatting(property_status=deal_data['property_status'], params=params
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/view_method.py", line 224, in formatting
+    df = percentage_average_market_data(property_status=property_status, params=params, period=period, compare=compare, percentage=percentage)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/view_method.py", line 208, in percentage_average_market_data
+    p_value = average_price - ((percentage/100) * average_price)
+TypeError: unsupported operand type(s) for *: 'float' and 'NoneType'
+ERROR 2021-04-05 17:53:51,354 basehttp 27511 123145354498048 "POST /deals/new/ HTTP/1.1" 500 83696
+ERROR 2021-04-05 18:00:27,339 view_method 27706 123145530888192 Error in making API request 
+ERROR 2021-04-05 18:00:27,339 view_method 27706 123145530888192 Response is empty
+ERROR 2021-04-05 18:00:27,340 view_method 27706 123145530888192 Response json is empty
+ERROR 2021-04-05 18:00:28,913 view_method 27706 123145530888192 Error in making API request 
+ERROR 2021-04-05 18:00:28,913 view_method 27706 123145530888192 Response is empty
+ERROR 2021-04-05 18:00:28,914 view_method 27706 123145530888192 Response json is empty
+ERROR 2021-04-05 18:00:28,914 view_method 27706 123145530888192 No dataframe to filter
+ERROR 2021-04-05 18:00:29,094 log 27706 123145530888192 Internal Server Error: /deals/new/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 83, in make_query
+    query = formatting(property_status=deal_data['property_status'], params=params
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/view_method.py", line 224, in formatting
+    df = percentage_average_market_data(property_status=property_status, params=params, period=period, compare=compare, percentage=percentage)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/view_method.py", line 208, in percentage_average_market_data
+    p_value = average_price - ((percentage/100) * average_price)
+TypeError: unsupported operand type(s) for *: 'float' and 'NoneType'
+ERROR 2021-04-05 18:00:29,273 basehttp 27706 123145530888192 "POST /deals/new/ HTTP/1.1" 500 80983
+ERROR 2021-04-05 18:01:15,936 view_method 27769 123145550749696 Error in making API request 
+ERROR 2021-04-05 18:01:15,936 view_method 27769 123145550749696 Response is empty
+ERROR 2021-04-05 18:01:15,937 view_method 27769 123145550749696 Response json is empty
+ERROR 2021-04-05 18:01:17,816 view_method 27769 123145550749696 Error in making API request 
+ERROR 2021-04-05 18:01:17,816 view_method 27769 123145550749696 Response is empty
+ERROR 2021-04-05 18:01:17,816 view_method 27769 123145550749696 Response json is empty
+ERROR 2021-04-05 18:01:17,817 view_method 27769 123145550749696 No dataframe to filter
+ERROR 2021-04-05 18:01:18,339 log 27769 123145550749696 Internal Server Error: /deals/new/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 83, in make_query
+    query = formatting(property_status=deal_data['property_status'], params=params
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/view_method.py", line 224, in formatting
+    df = percentage_average_market_data(property_status=property_status, params=params, period=period, compare=compare, percentage=percentage)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/view_method.py", line 208, in percentage_average_market_data
+    p_value = average_price - ((percentage/100) * average_price)
+TypeError: unsupported operand type(s) for *: 'float' and 'NoneType'
+ERROR 2021-04-05 18:01:18,520 basehttp 27769 123145550749696 "POST /deals/new/ HTTP/1.1" 500 80983
+ERROR 2021-04-05 18:24:09,892 view_method 28610 123145479888896 Error in making API request 
+ERROR 2021-04-05 18:24:09,893 view_method 28610 123145479888896 Response is empty
+ERROR 2021-04-05 18:24:09,893 view_method 28610 123145479888896 Response json is empty
+ERROR 2021-04-05 18:24:11,768 view_method 28610 123145479888896 Error in making API request 
+ERROR 2021-04-05 18:24:11,769 view_method 28610 123145479888896 Response is empty
+ERROR 2021-04-05 18:24:11,769 view_method 28610 123145479888896 Response json is empty
+ERROR 2021-04-05 18:24:11,769 view_method 28610 123145479888896 No dataframe to filter
+ERROR 2021-04-05 18:24:11,887 log 28610 123145479888896 Internal Server Error: /deals/new/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 83, in make_query
+    query = formatting(property_status=deal_data['property_status'], params=params
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/view_method.py", line 224, in formatting
+    df = percentage_average_market_data(property_status=property_status, params=params, period=period, compare=compare, percentage=percentage)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/view_method.py", line 208, in percentage_average_market_data
+    p_value = average_price - ((percentage/100) * average_price)
+TypeError: unsupported operand type(s) for *: 'float' and 'NoneType'
+ERROR 2021-04-05 18:24:11,889 basehttp 28610 123145479888896 "POST /deals/new/ HTTP/1.1" 500 80983

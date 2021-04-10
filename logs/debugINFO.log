@@ -6585,3 +6585,460 @@ INFO 2021-04-01 16:46:24,195 basehttp 9921 123145472532480 "GET /deals/refresh/1
 INFO 2021-04-01 16:46:29,535 basehttp 9921 123145472532480 "GET /deals/save/ HTTP/1.1" 200 3224
 INFO 2021-04-01 16:46:39,402 basehttp 9921 123145472532480 "GET /deals/view/18/ HTTP/1.1" 200 808
 INFO 2021-04-01 16:46:43,552 basehttp 9921 123145472532480 "GET /deals/refresh/18/ HTTP/1.1" 200 3322
+INFO 2021-04-02 17:58:03,309 autoreload 19791 140735824819072 Watching for file changes with StatReloader
+INFO 2021-04-02 17:58:14,761 basehttp 19791 123145338650624 "GET / HTTP/1.1" 200 13285
+INFO 2021-04-02 17:58:15,919 basehttp 19791 123145338650624 "GET /static/deal/style.css HTTP/1.1" 304 0
+INFO 2021-04-02 17:58:16,346 basehttp 19791 123145338650624 "GET /static/deal/script.js HTTP/1.1" 304 0
+INFO 2021-04-02 17:58:16,352 basehttp 19791 123145355440128 "GET /static/deal/images/about.png HTTP/1.1" 304 0
+INFO 2021-04-02 17:58:16,359 basehttp 19791 123145372229632 "GET /static/deal/images/envelope.png HTTP/1.1" 304 0
+INFO 2021-04-02 17:58:16,368 basehttp 19791 123145389019136 "GET /static/deal/images/facebook1.png HTTP/1.1" 304 0
+INFO 2021-04-02 17:58:16,373 basehttp 19791 123145338650624 "GET /static/deal/images/youtube.png HTTP/1.1" 304 0
+INFO 2021-04-02 17:58:16,383 basehttp 19791 123145355440128 "GET /static/deal/images/twitter.png HTTP/1.1" 304 0
+INFO 2021-04-02 17:58:16,406 basehttp 19791 123145338650624 "GET /static/deal/images/instagram.png HTTP/1.1" 304 0
+INFO 2021-04-02 17:58:16,406 basehttp 19791 123145355440128 "GET /static/deal/images/linkedin.png HTTP/1.1" 304 0
+INFO 2021-04-02 17:58:16,642 basehttp 19791 123145338650624 "GET /static/deal/images/headerbg2.jpg HTTP/1.1" 304 0
+INFO 2021-04-02 17:58:19,621 basehttp 19791 123145338650624 "GET /deals/new/ HTTP/1.1" 200 12250
+INFO 2021-04-02 17:58:19,832 basehttp 19791 123145338650624 "GET /static/deal/images/bg.jpg HTTP/1.1" 304 0
+INFO 2021-04-02 17:58:46,382 basehttp 19791 123145338650624 "POST /deals/new/ HTTP/1.1" 302 0
+INFO 2021-04-02 17:58:46,535 basehttp 19791 123145338650624 "GET /deals/display/ HTTP/1.1" 200 6403
+INFO 2021-04-02 17:58:57,814 basehttp 19791 123145338650624 "GET /deals/detail/7/ HTTP/1.1" 200 7596
+INFO 2021-04-02 17:59:05,798 basehttp 19791 123145338650624 "GET /deals/detail/3/ HTTP/1.1" 200 2537
+INFO 2021-04-02 17:59:17,013 basehttp 19791 123145338650624 "GET /deals/detail/0/ HTTP/1.1" 200 5964
+INFO 2021-04-02 17:59:37,393 basehttp 19791 123145338650624 "GET /deals/detail/4/ HTTP/1.1" 200 2607
+INFO 2021-04-02 18:03:12,182 basehttp 19791 123145338650624 "GET /deals/new/ HTTP/1.1" 200 12250
+INFO 2021-04-02 18:03:23,499 basehttp 19791 123145338650624 "POST /deals/new/ HTTP/1.1" 302 0
+INFO 2021-04-02 18:03:23,582 basehttp 19791 123145338650624 "GET /deals/display/ HTTP/1.1" 200 6403
+INFO 2021-04-02 18:03:25,131 basehttp 19791 123145338650624 "GET /deals/detail/14/ HTTP/1.1" 200 4670
+INFO 2021-04-02 18:11:42,101 basehttp 19791 123145338650624 "GET /deals/detail/6/ HTTP/1.1" 200 2722
+INFO 2021-04-02 18:11:45,231 basehttp 19791 123145338650624 "GET /deals/detail/1/ HTTP/1.1" 200 5964
+INFO 2021-04-02 18:11:48,243 basehttp 19791 123145338650624 "GET /deals/save/ HTTP/1.1" 200 3231
+INFO 2021-04-02 18:11:49,631 basehttp 19791 123145338650624 "POST /deals/save/ HTTP/1.1" 302 0
+INFO 2021-04-02 18:11:49,727 basehttp 19791 123145338650624 "GET /deals/subscriptions/ HTTP/1.1" 200 11734
+INFO 2021-04-02 18:11:52,178 basehttp 19791 123145338650624 "GET /deals/refresh/19/ HTTP/1.1" 200 3317
+INFO 2021-04-02 18:12:10,280 basehttp 19791 123145338650624 "POST /deals/refresh/19/ HTTP/1.1" 200 6535
+INFO 2021-04-02 18:12:12,031 basehttp 19791 123145338650624 "GET /deals/detail_refresh/2/ HTTP/1.1" 200 4064
+INFO 2021-04-02 19:21:30,935 autoreload 19791 140735824819072 /Users/home/Documents/GitHub/WhiteCow2/deal/views.py changed, reloading.
+INFO 2021-04-02 19:21:38,470 autoreload 20935 140735824819072 Watching for file changes with StatReloader
+INFO 2021-04-02 19:22:32,788 autoreload 20935 140735824819072 /Users/home/Documents/GitHub/WhiteCow2/deal/views.py changed, reloading.
+INFO 2021-04-02 19:22:38,420 autoreload 21024 140735824819072 Watching for file changes with StatReloader
+INFO 2021-04-02 19:22:50,698 basehttp 21024 123145603067904 "GET /deals/refresh/19/ HTTP/1.1" 200 3317
+ERROR 2021-04-02 19:22:52,915 log 21024 123145603067904 Internal Server Error: /deals/save/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 174, in saveDeal
+    data = get_data()
+TypeError: 'NoneType' object is not callable
+ERROR 2021-04-02 19:22:52,919 basehttp 21024 123145603067904 "GET /deals/save/ HTTP/1.1" 500 62912
+INFO 2021-04-02 19:22:55,597 basehttp 21024 123145603067904 "GET /deals/new/ HTTP/1.1" 200 12250
+INFO 2021-04-02 19:23:09,019 basehttp 21024 123145603067904 "POST /deals/new/ HTTP/1.1" 302 0
+INFO 2021-04-02 19:23:09,604 basehttp 21024 123145603067904 "GET /deals/display/ HTTP/1.1" 200 6383
+INFO 2021-04-02 19:23:13,895 basehttp 21024 123145603067904 "GET /deals/detail/7/ HTTP/1.1" 200 3080
+INFO 2021-04-02 19:25:10,879 autoreload 21024 140735824819072 /Users/home/Documents/GitHub/WhiteCow2/deal/views.py changed, reloading.
+INFO 2021-04-02 19:25:18,495 autoreload 21123 140735824819072 Watching for file changes with StatReloader
+INFO 2021-04-02 19:25:29,753 basehttp 21123 123145577725952 "GET /deals/new/ HTTP/1.1" 200 12250
+INFO 2021-04-02 19:25:42,111 basehttp 21123 123145577725952 "POST /deals/new/ HTTP/1.1" 302 0
+INFO 2021-04-02 19:25:42,203 basehttp 21123 123145577725952 "GET /deals/display/ HTTP/1.1" 200 6383
+INFO 2021-04-02 19:25:43,971 basehttp 21123 123145577725952 "GET /deals/detail/11/ HTTP/1.1" 200 5796
+INFO 2021-04-02 19:27:37,100 autoreload 21123 140735824819072 /Users/home/Documents/GitHub/WhiteCow2/deal/views.py changed, reloading.
+INFO 2021-04-02 19:27:44,050 autoreload 21184 140735824819072 Watching for file changes with StatReloader
+ERROR 2021-04-02 19:35:17,642 log 21184 123145347461120 Internal Server Error: /deals/detail/2/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 495, in detail
+    data = get_data()[2]
+TypeError: 'NoneType' object is not callable
+ERROR 2021-04-02 19:35:17,647 basehttp 21184 123145347461120 "GET /deals/detail/2/ HTTP/1.1" 500 63119
+INFO 2021-04-03 05:28:24,558 autoreload 21184 140735824819072 /Users/home/Documents/GitHub/WhiteCow2/deal/views.py changed, reloading.
+INFO 2021-04-03 05:28:39,384 autoreload 25367 140735824819072 Watching for file changes with StatReloader
+INFO 2021-04-03 05:28:47,035 basehttp 25367 123145348419584 "GET /deals/new/ HTTP/1.1" 200 12250
+INFO 2021-04-03 05:29:07,533 basehttp 25367 123145348419584 "POST /deals/new/ HTTP/1.1" 302 0
+INFO 2021-04-03 05:29:07,668 basehttp 25367 123145348419584 "GET /deals/display/ HTTP/1.1" 200 6370
+INFO 2021-04-03 05:29:10,051 basehttp 25367 123145348419584 "GET /deals/detail/2/ HTTP/1.1" 200 2843
+INFO 2021-04-03 05:29:27,809 basehttp 25367 123145348419584 "GET /deals/detail/7/ HTTP/1.1" 200 4135
+INFO 2021-04-03 05:29:39,257 basehttp 25367 123145348419584 "GET /deals/detail/4/ HTTP/1.1" 200 5964
+INFO 2021-04-03 05:29:52,206 basehttp 25367 123145348419584 "GET /deals/detail/5/ HTTP/1.1" 200 5720
+INFO 2021-04-03 05:33:11,530 autoreload 25367 140735824819072 /Users/home/Documents/GitHub/WhiteCow2/deal/views.py changed, reloading.
+INFO 2021-04-03 05:33:22,241 autoreload 25565 140735824819072 Watching for file changes with StatReloader
+INFO 2021-04-03 05:33:31,175 basehttp 25565 123145403002880 "GET /deals/new/ HTTP/1.1" 200 12250
+INFO 2021-04-03 05:33:41,408 basehttp 25565 123145403002880 "POST /deals/new/ HTTP/1.1" 302 0
+INFO 2021-04-03 05:33:42,879 basehttp 25565 123145403002880 "GET /deals/display/ HTTP/1.1" 200 6370
+INFO 2021-04-03 05:33:44,632 basehttp 25565 123145403002880 "GET /deals/detail/9/ HTTP/1.1" 200 2920
+INFO 2021-04-03 05:33:50,263 basehttp 25565 123145403002880 "GET /deals/detail/2/ HTTP/1.1" 200 2843
+INFO 2021-04-03 05:35:12,000 basehttp 25565 123145403002880 "GET /deals/save/ HTTP/1.1" 200 3231
+INFO 2021-04-03 05:35:17,682 basehttp 25565 123145403002880 "POST /deals/save/ HTTP/1.1" 302 0
+INFO 2021-04-03 05:35:17,726 basehttp 25565 123145403002880 "GET /deals/subscriptions/ HTTP/1.1" 200 11912
+INFO 2021-04-03 05:35:19,969 basehttp 25565 123145403002880 "GET /deals/view/1/ HTTP/1.1" 200 284
+INFO 2021-04-03 05:35:23,670 basehttp 25565 123145403002880 "GET /deals/view/16/ HTTP/1.1" 200 3493
+INFO 2021-04-03 05:35:24,986 basehttp 25565 123145403002880 "GET /deals/view/specific/10/ HTTP/1.1" 200 2925
+INFO 2021-04-03 05:35:42,037 basehttp 25565 123145403002880 "GET /deals/view/specific/11/ HTTP/1.1" 200 3034
+INFO 2021-04-03 05:35:52,491 basehttp 25565 123145403002880 "GET /deals/view/specific/10/ HTTP/1.1" 200 2925
+INFO 2021-04-03 05:36:03,219 basehttp 25565 123145403002880 "GET /deals/view/specific/6/ HTTP/1.1" 200 3432
+INFO 2021-04-03 05:36:41,995 basehttp 25565 123145403002880 "GET /deals/view/specific/8/ HTTP/1.1" 200 3442
+INFO 2021-04-03 05:38:50,243 basehttp 25565 123145403002880 "GET /deals/view/specific/13/ HTTP/1.1" 200 3238
+INFO 2021-04-03 05:39:39,681 basehttp 25565 123145403002880 "GET /deals/view/specific/6/ HTTP/1.1" 200 3432
+INFO 2021-04-03 05:39:55,259 basehttp 25565 123145403002880 "GET /deals/view/specific/9/ HTTP/1.1" 200 2883
+INFO 2021-04-03 05:49:12,458 autoreload 25961 140735824819072 Watching for file changes with StatReloader
+INFO 2021-04-03 05:49:20,461 basehttp 25961 123145522991104 "GET /deals/subscriptions/ HTTP/1.1" 200 11912
+INFO 2021-04-03 05:49:22,940 basehttp 25961 123145522991104 "GET /deals/subscriptions/ HTTP/1.1" 200 11912
+INFO 2021-04-03 05:49:24,804 basehttp 25961 123145522991104 "GET /deals/view/5/ HTTP/1.1" 200 3477
+ERROR 2021-04-03 05:49:25,745 log 25961 123145522991104 Internal Server Error: /deals/view/specific/11/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 407, in detail_view_deal
+    d = [
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 410, in <listcomp>
+    for i,colname in enumerate(data.columns)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/pandas/core/generic.py", line 5462, in __getattr__
+    return object.__getattribute__(self, name)
+AttributeError: 'Series' object has no attribute 'columns'
+ERROR 2021-04-03 05:49:25,762 basehttp 25961 123145522991104 "GET /deals/view/specific/11/ HTTP/1.1" 500 78275
+INFO 2021-04-03 05:50:30,595 autoreload 25961 140735824819072 /Users/home/Documents/GitHub/WhiteCow2/deal/views.py changed, reloading.
+INFO 2021-04-03 05:50:34,908 autoreload 26003 140735824819072 Watching for file changes with StatReloader
+INFO 2021-04-03 05:50:43,155 basehttp 26003 123145376768000 "GET /deals/subscriptions/ HTTP/1.1" 200 11912
+INFO 2021-04-03 05:50:44,929 basehttp 26003 123145376768000 "GET /deals/view/12/ HTTP/1.1" 200 3513
+ERROR 2021-04-03 05:50:45,898 log 26003 123145376768000 Internal Server Error: /deals/view/specific/8/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 414, in detail_view_deal
+    data=ujson.dumps(d)
+TypeError: 51 is not JSON serializable
+ERROR 2021-04-03 05:50:45,901 basehttp 26003 123145376768000 "GET /deals/view/specific/8/ HTTP/1.1" 500 71654
+ERROR 2021-04-03 05:51:01,710 log 26003 123145376768000 Internal Server Error: /deals/view/specific/10/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 414, in detail_view_deal
+    data=ujson.dumps(d)
+TypeError: 41 is not JSON serializable
+ERROR 2021-04-03 05:51:01,713 basehttp 26003 123145376768000 "GET /deals/view/specific/10/ HTTP/1.1" 500 71641
+INFO 2021-04-03 05:53:45,166 autoreload 26003 140735824819072 /Users/home/Documents/GitHub/WhiteCow2/deal/views.py changed, reloading.
+INFO 2021-04-03 05:53:52,459 autoreload 26096 140735824819072 Watching for file changes with StatReloader
+INFO 2021-04-03 05:54:03,805 basehttp 26096 123145367228416 "GET /deals/subscriptions/ HTTP/1.1" 200 11912
+INFO 2021-04-03 05:54:05,499 basehttp 26096 123145367228416 "GET /deals/view/16/ HTTP/1.1" 200 3493
+ERROR 2021-04-03 05:54:06,558 log 26096 123145367228416 Internal Server Error: /deals/view/specific/10/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 415, in detail_view_deal
+    data=ujson.dumps(d , cls=DjangoJSONEncoder)
+TypeError: 'cls' is an invalid keyword argument for this function
+ERROR 2021-04-03 05:54:06,560 basehttp 26096 123145367228416 "GET /deals/view/specific/10/ HTTP/1.1" 500 71090
+INFO 2021-04-03 05:57:16,460 autoreload 26198 140735824819072 Watching for file changes with StatReloader
+INFO 2021-04-03 05:59:36,016 autoreload 26198 140735824819072 /Users/home/Documents/GitHub/WhiteCow2/deal/views.py changed, reloading.
+INFO 2021-04-03 05:59:40,792 autoreload 26262 140735824819072 Watching for file changes with StatReloader
+INFO 2021-04-03 05:59:51,659 basehttp 26262 123145471127552 "GET /deals/subscriptions/ HTTP/1.1" 200 11912
+INFO 2021-04-03 05:59:53,849 basehttp 26262 123145471127552 "GET /deals/view/19/ HTTP/1.1" 200 3526
+ERROR 2021-04-03 05:59:55,214 log 26262 123145471127552 Internal Server Error: /deals/view/specific/14/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 417, in detail_view_deal
+    data=ujson.dumps(d , default=convert)
+TypeError: 'default' is an invalid keyword argument for this function
+ERROR 2021-04-03 05:59:55,220 basehttp 26262 123145471127552 "GET /deals/view/specific/14/ HTTP/1.1" 500 71835
+INFO 2021-04-03 06:00:19,949 autoreload 26262 140735824819072 /Users/home/Documents/GitHub/WhiteCow2/deal/views.py changed, reloading.
+INFO 2021-04-03 06:00:26,008 autoreload 26313 140735824819072 Watching for file changes with StatReloader
+INFO 2021-04-03 06:00:38,720 basehttp 26313 123145396170752 "GET /deals/subscriptions/ HTTP/1.1" 200 11912
+INFO 2021-04-03 06:00:40,340 basehttp 26313 123145396170752 "GET /deals/view/18/ HTTP/1.1" 200 808
+ERROR 2021-04-03 06:00:41,679 log 26313 123145396170752 Internal Server Error: /deals/view/specific/1/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 417, in detail_view_deal
+    data=json.dumps(d , default=convert)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 393, in convert
+    if isinstance(o, numpy.int64): return int(o)
+NameError: name 'numpy' is not defined
+ERROR 2021-04-03 06:00:41,847 basehttp 26313 123145396170752 "GET /deals/view/specific/1/ HTTP/1.1" 500 109058
+INFO 2021-04-03 06:00:59,096 autoreload 26313 140735824819072 /Users/home/Documents/GitHub/WhiteCow2/deal/views.py changed, reloading.
+INFO 2021-04-03 06:01:03,243 autoreload 26348 140735824819072 Watching for file changes with StatReloader
+INFO 2021-04-03 06:01:08,837 basehttp 26348 123145384214528 "GET /deals/subscriptions/ HTTP/1.1" 200 11912
+INFO 2021-04-03 06:01:10,377 basehttp 26348 123145384214528 "GET /deals/view/20/ HTTP/1.1" 200 3493
+INFO 2021-04-03 06:01:11,224 basehttp 26348 123145384214528 "GET /deals/view/specific/11/ HTTP/1.1" 200 2864
+INFO 2021-04-03 06:01:14,807 basehttp 26348 123145384214528 "GET /deals/view/specific/13/ HTTP/1.1" 200 3041
+INFO 2021-04-03 06:01:17,643 basehttp 26348 123145384214528 "GET /deals/view/specific/7/ HTTP/1.1" 200 4489
+INFO 2021-04-03 06:03:54,673 autoreload 26348 140735824819072 /Users/home/Documents/GitHub/WhiteCow2/deal/views.py changed, reloading.
+INFO 2021-04-03 06:04:02,561 autoreload 26437 140735824819072 Watching for file changes with StatReloader
+INFO 2021-04-03 06:04:03,870 basehttp 26437 123145495310336 "GET /deals/view/20/ HTTP/1.1" 200 3493
+INFO 2021-04-03 06:04:04,744 basehttp 26437 123145495310336 "GET /deals/view/specific/15/ HTTP/1.1" 200 5116
+INFO 2021-04-03 06:04:35,057 autoreload 26437 140735824819072 /Users/home/Documents/GitHub/WhiteCow2/deal/views.py changed, reloading.
+INFO 2021-04-03 06:04:39,476 autoreload 26470 140735824819072 Watching for file changes with StatReloader
+INFO 2021-04-03 06:05:55,076 autoreload 26470 140735824819072 /Users/home/Documents/GitHub/WhiteCow2/deal/views.py changed, reloading.
+INFO 2021-04-03 06:06:00,230 autoreload 26540 140735824819072 Watching for file changes with StatReloader
+ERROR 2021-04-03 06:06:08,900 log 26540 123145353883648 Internal Server Error: /deals/view/specific/9/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 397, in detail_view_deal
+    deal = detail_deal()
+TypeError: 'NoneType' object is not callable
+ERROR 2021-04-03 06:06:08,902 basehttp 26540 123145353883648 "GET /deals/view/specific/9/ HTTP/1.1" 500 63294
+INFO 2021-04-03 06:06:15,696 basehttp 26540 123145353883648 "GET /deals/subscriptions/ HTTP/1.1" 200 11912
+INFO 2021-04-03 06:06:17,336 basehttp 26540 123145353883648 "GET /deals/view/19/ HTTP/1.1" 200 3526
+ERROR 2021-04-03 06:06:18,219 log 26540 123145353883648 Internal Server Error: /deals/view/specific/15/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 417, in detail_view_deal
+    data=ujson.dumps(d , default=str, indent=4)
+TypeError: 'default' is an invalid keyword argument for this function
+ERROR 2021-04-03 06:06:18,258 basehttp 26540 123145353883648 "GET /deals/view/specific/15/ HTTP/1.1" 500 71832
+INFO 2021-04-03 06:12:40,554 autoreload 26540 140735824819072 /Users/home/Documents/GitHub/WhiteCow2/deal/views.py changed, reloading.
+INFO 2021-04-03 06:12:50,620 autoreload 26688 140735824819072 Watching for file changes with StatReloader
+INFO 2021-04-03 06:12:54,460 basehttp 26688 123145450008576 "GET /deals/view/16/ HTTP/1.1" 200 3493
+ERROR 2021-04-03 06:12:56,624 log 26688 123145450008576 Internal Server Error: /deals/view/specific/12/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 410, in detail_view_deal
+    parsed = json.loads(data)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 339, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not DataFrame
+ERROR 2021-04-03 06:12:56,639 basehttp 26688 123145450008576 "GET /deals/view/specific/12/ HTTP/1.1" 500 73278
+INFO 2021-04-03 06:13:44,944 autoreload 26688 140735824819072 /Users/home/Documents/GitHub/WhiteCow2/deal/views.py changed, reloading.
+INFO 2021-04-03 06:13:50,544 autoreload 26771 140735824819072 Watching for file changes with StatReloader
+INFO 2021-04-03 06:13:56,076 basehttp 26771 123145481773056 "GET /deals/subscriptions/ HTTP/1.1" 200 11912
+INFO 2021-04-03 06:13:58,593 basehttp 26771 123145481773056 "GET /deals/view/18/ HTTP/1.1" 200 808
+INFO 2021-04-03 06:13:59,898 basehttp 26771 123145481773056 "GET /deals/view/specific/3/ HTTP/1.1" 200 6122
+INFO 2021-04-03 06:14:11,922 basehttp 26771 123145481773056 "GET /deals/view/specific/1/ HTTP/1.1" 200 6355
+INFO 2021-04-03 06:14:35,129 autoreload 26771 140735824819072 /Users/home/Documents/GitHub/WhiteCow2/deal/views.py changed, reloading.
+INFO 2021-04-03 06:14:40,468 autoreload 26822 140735824819072 Watching for file changes with StatReloader
+INFO 2021-04-03 06:14:41,330 basehttp 26822 123145466638336 "GET /deals/view/18/ HTTP/1.1" 200 808
+INFO 2021-04-03 06:14:43,116 basehttp 26822 123145466638336 "GET /deals/view/18/ HTTP/1.1" 200 808
+INFO 2021-04-03 06:14:44,142 basehttp 26822 123145466638336 "GET /deals/view/specific/3/ HTTP/1.1" 200 13422
+INFO 2021-04-03 06:16:23,076 autoreload 26822 140735824819072 /Users/home/Documents/GitHub/WhiteCow2/deal/views.py changed, reloading.
+INFO 2021-04-03 06:16:28,496 autoreload 26887 140735824819072 Watching for file changes with StatReloader
+ERROR 2021-04-03 06:16:33,322 log 26887 123145506275328 Internal Server Error: /deals/view/specific/3/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 397, in detail_view_deal
+    deal = detail_deal()
+TypeError: 'NoneType' object is not callable
+ERROR 2021-04-03 06:16:33,324 basehttp 26887 123145506275328 "GET /deals/view/specific/3/ HTTP/1.1" 500 63431
+INFO 2021-04-03 06:16:39,887 basehttp 26887 123145506275328 "GET /deals/view/18/ HTTP/1.1" 200 808
+INFO 2021-04-03 06:16:41,008 basehttp 26887 123145506275328 "GET /deals/view/specific/3/ HTTP/1.1" 200 12599
+INFO 2021-04-03 06:16:58,568 basehttp 26887 123145506275328 "GET /deals/refresh/12/ HTTP/1.1" 200 3324
+INFO 2021-04-03 06:17:02,291 basehttp 26887 123145506275328 "GET /deals/view/14/ HTTP/1.1" 200 2342
+INFO 2021-04-03 06:17:03,226 basehttp 26887 123145506275328 "GET /deals/view/specific/7/ HTTP/1.1" 200 12086
+INFO 2021-04-03 06:35:22,500 basehttp 26887 123145506275328 "GET /deals/view/specific/7/ HTTP/1.1" 200 12086
+INFO 2021-04-03 06:35:37,317 basehttp 26887 123145506275328 "GET /deals/view/specific/7/ HTTP/1.1" 200 12086
+INFO 2021-04-03 06:35:47,389 basehttp 26887 123145506275328 "GET /deals/view/16/ HTTP/1.1" 200 3493
+INFO 2021-04-03 06:35:48,649 basehttp 26887 123145506275328 "GET /deals/view/specific/10/ HTTP/1.1" 200 12088
+INFO 2021-04-03 06:36:06,575 basehttp 26887 123145506275328 "GET /deals/view/specific/10/ HTTP/1.1" 200 12088
+INFO 2021-04-03 06:36:08,691 basehttp 26887 123145506275328 "GET /deals/view/specific/10/ HTTP/1.1" 200 12088
+INFO 2021-04-03 06:36:10,698 basehttp 26887 123145506275328 "GET /deals/view/specific/10/ HTTP/1.1" 200 12088
+INFO 2021-04-03 06:36:12,739 basehttp 26887 123145506275328 "GET /deals/view/specific/8/ HTTP/1.1" 200 12436
+INFO 2021-04-03 06:36:42,508 autoreload 26887 140735824819072 /Users/home/Documents/GitHub/WhiteCow2/deal/views.py changed, reloading.
+INFO 2021-04-03 06:36:55,318 autoreload 27188 140735824819072 Watching for file changes with StatReloader
+INFO 2021-04-03 06:37:01,258 basehttp 27188 123145357029376 "GET /deals/subscriptions/ HTTP/1.1" 200 11912
+INFO 2021-04-03 06:37:03,229 basehttp 27188 123145357029376 "GET /deals/view/19/ HTTP/1.1" 200 3526
+INFO 2021-04-03 06:37:04,110 basehttp 27188 123145357029376 "GET /deals/view/specific/15/ HTTP/1.1" 200 16426
+INFO 2021-04-03 06:37:09,980 basehttp 27188 123145357029376 "GET /deals/view/specific/14/ HTTP/1.1" 200 16847
+INFO 2021-04-03 06:37:13,997 basehttp 27188 123145357029376 "GET /deals/view/specific/8/ HTTP/1.1" 200 21049
+INFO 2021-04-03 06:38:13,910 basehttp 27188 123145357029376 "GET /deals/subscriptions/ HTTP/1.1" 200 11912
+INFO 2021-04-03 06:38:15,829 basehttp 27188 123145357029376 "GET /deals/view/16/ HTTP/1.1" 200 3493
+INFO 2021-04-03 06:38:16,664 basehttp 27188 123145357029376 "GET /deals/view/specific/9/ HTTP/1.1" 200 302
+INFO 2021-04-03 06:38:21,107 basehttp 27188 123145357029376 "GET /deals/view/specific/17/ HTTP/1.1" 200 302
+INFO 2021-04-03 06:38:27,026 basehttp 27188 123145357029376 "GET /deals/view/20/ HTTP/1.1" 200 3493
+INFO 2021-04-03 06:38:27,796 basehttp 27188 123145357029376 "GET /deals/view/specific/17/ HTTP/1.1" 200 302
+INFO 2021-04-03 06:38:46,301 basehttp 27188 123145357029376 "GET /deals/subscriptions/ HTTP/1.1" 200 11912
+INFO 2021-04-03 06:38:47,724 basehttp 27188 123145357029376 "GET /deals/view/19/ HTTP/1.1" 200 3526
+ERROR 2021-04-03 06:38:48,924 log 27188 123145357029376 Internal Server Error: /deals/view/specific/12/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 424, in detail_view_deal
+    return render(request, 'deal/Views/detail_deal_specific.html', {'data':data})
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 449, in parse
+    raise self.error(token, e)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 447, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 563, in compile_filter
+    return FilterExpression(token, self)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 662, in __init__
+    raise TemplateSyntaxError("Could not parse the remainder: '%s' "
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '["id"]' from 'data["id"]'
+ERROR 2021-04-03 06:38:48,936 basehttp 27188 123145357029376 "GET /deals/view/specific/12/ HTTP/1.1" 500 147129
+INFO 2021-04-03 06:39:21,656 basehttp 27188 123145357029376 "GET /deals/view/specific/12/ HTTP/1.1" 200 302
+INFO 2021-04-03 06:39:26,435 basehttp 27188 123145357029376 "GET /deals/view/16/ HTTP/1.1" 200 3493
+INFO 2021-04-03 06:39:27,399 basehttp 27188 123145357029376 "GET /deals/view/specific/10/ HTTP/1.1" 200 302
+INFO 2021-04-03 06:39:37,733 basehttp 27188 123145357029376 "GET /deals/view/specific/10/ HTTP/1.1" 200 14200
+INFO 2021-04-03 06:40:06,945 basehttp 27188 123145357029376 "GET /deals/view/specific/10/ HTTP/1.1" 200 302
+INFO 2021-04-05 17:43:36,177 autoreload 27233 140736273863552 Watching for file changes with StatReloader
+INFO 2021-04-05 17:43:44,942 basehttp 27233 123145523916800 "GET / HTTP/1.1" 200 13285
+INFO 2021-04-05 17:43:45,297 basehttp 27233 123145523916800 "GET /static/deal/style.css HTTP/1.1" 304 0
+INFO 2021-04-05 17:43:45,690 basehttp 27233 123145523916800 "GET /static/deal/script.js HTTP/1.1" 304 0
+INFO 2021-04-05 17:43:45,694 basehttp 27233 123145540706304 "GET /static/deal/images/about.png HTTP/1.1" 304 0
+INFO 2021-04-05 17:43:45,703 basehttp 27233 123145557495808 "GET /static/deal/images/envelope.png HTTP/1.1" 304 0
+INFO 2021-04-05 17:43:46,243 basehttp 27233 123145557495808 "GET /static/deal/images/facebook1.png HTTP/1.1" 304 0
+INFO 2021-04-05 17:43:46,248 basehttp 27233 123145540706304 "GET /static/deal/images/youtube.png HTTP/1.1" 304 0
+INFO 2021-04-05 17:43:46,254 basehttp 27233 123145574285312 "GET /static/deal/images/linkedin.png HTTP/1.1" 304 0
+INFO 2021-04-05 17:43:46,255 basehttp 27233 123145591074816 "GET /static/deal/images/instagram.png HTTP/1.1" 304 0
+INFO 2021-04-05 17:43:46,256 basehttp 27233 123145523916800 "GET /static/deal/images/twitter.png HTTP/1.1" 304 0
+INFO 2021-04-05 17:43:46,807 basehttp 27233 123145591074816 "GET /static/deal/images/headerbg2.jpg HTTP/1.1" 304 0
+INFO 2021-04-05 17:43:51,775 basehttp 27233 123145591074816 "GET /deals/new/ HTTP/1.1" 200 12250
+INFO 2021-04-05 17:43:52,024 basehttp 27233 123145591074816 "GET /static/deal/images/bg.jpg HTTP/1.1" 304 0
+INFO 2021-04-05 17:44:13,373 basehttp 27233 123145591074816 "POST /deals/new/ HTTP/1.1" 302 0
+INFO 2021-04-05 17:44:13,923 basehttp 27233 123145591074816 "GET /deals/display/ HTTP/1.1" 200 6396
+INFO 2021-04-05 17:48:07,248 basehttp 27233 123145591074816 "GET /deals/display/ HTTP/1.1" 200 6396
+INFO 2021-04-05 17:48:20,404 basehttp 27233 123145591074816 "POST /deals/display/ HTTP/1.1" 200 6396
+INFO 2021-04-05 17:48:50,976 basehttp 27233 123145523916800 "POST /deals/display/ HTTP/1.1" 200 8396
+INFO 2021-04-05 17:52:49,842 autoreload 27233 140736273863552 /Users/home/Documents/GitHub/WhiteCow2/deal/views.py changed, reloading.
+INFO 2021-04-05 17:52:56,521 autoreload 27484 140736273863552 Watching for file changes with StatReloader
+INFO 2021-04-05 17:53:06,885 autoreload 27484 140736273863552 /Users/home/Documents/GitHub/WhiteCow2/deal/views.py changed, reloading.
+INFO 2021-04-05 17:53:18,482 autoreload 27511 140736273863552 Watching for file changes with StatReloader
+ERROR 2021-04-05 17:53:39,951 log 27511 123145354498048 Internal Server Error: /deals/display/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 106, in display_search_query
+    data = get_data()
+TypeError: 'NoneType' object is not callable
+ERROR 2021-04-05 17:53:39,958 basehttp 27511 123145354498048 "GET /deals/display/ HTTP/1.1" 500 64302
+INFO 2021-04-05 17:53:42,180 basehttp 27511 123145354498048 "GET /deals/new/ HTTP/1.1" 200 12250
+ERROR 2021-04-05 17:53:50,352 view_method 27511 123145354498048 Error in making API request 
+ERROR 2021-04-05 17:53:50,354 view_method 27511 123145354498048 Response is empty
+ERROR 2021-04-05 17:53:50,354 view_method 27511 123145354498048 Response json is empty
+ERROR 2021-04-05 17:53:50,354 view_method 27511 123145354498048 No dataframe to filter
+ERROR 2021-04-05 17:53:51,247 log 27511 123145354498048 Internal Server Error: /deals/new/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 83, in make_query
+    query = formatting(property_status=deal_data['property_status'], params=params
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/view_method.py", line 224, in formatting
+    df = percentage_average_market_data(property_status=property_status, params=params, period=period, compare=compare, percentage=percentage)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/view_method.py", line 208, in percentage_average_market_data
+    p_value = average_price - ((percentage/100) * average_price)
+TypeError: unsupported operand type(s) for *: 'float' and 'NoneType'
+ERROR 2021-04-05 17:53:51,354 basehttp 27511 123145354498048 "POST /deals/new/ HTTP/1.1" 500 83696
+INFO 2021-04-05 18:00:09,954 autoreload 27511 140736273863552 /Users/home/Documents/GitHub/WhiteCow2/deal/config.py changed, reloading.
+INFO 2021-04-05 18:00:19,092 autoreload 27706 140736273863552 Watching for file changes with StatReloader
+ERROR 2021-04-05 18:00:27,339 view_method 27706 123145530888192 Error in making API request 
+ERROR 2021-04-05 18:00:27,339 view_method 27706 123145530888192 Response is empty
+ERROR 2021-04-05 18:00:27,340 view_method 27706 123145530888192 Response json is empty
+ERROR 2021-04-05 18:00:28,913 view_method 27706 123145530888192 Error in making API request 
+ERROR 2021-04-05 18:00:28,913 view_method 27706 123145530888192 Response is empty
+ERROR 2021-04-05 18:00:28,914 view_method 27706 123145530888192 Response json is empty
+ERROR 2021-04-05 18:00:28,914 view_method 27706 123145530888192 No dataframe to filter
+ERROR 2021-04-05 18:00:29,094 log 27706 123145530888192 Internal Server Error: /deals/new/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 83, in make_query
+    query = formatting(property_status=deal_data['property_status'], params=params
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/view_method.py", line 224, in formatting
+    df = percentage_average_market_data(property_status=property_status, params=params, period=period, compare=compare, percentage=percentage)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/view_method.py", line 208, in percentage_average_market_data
+    p_value = average_price - ((percentage/100) * average_price)
+TypeError: unsupported operand type(s) for *: 'float' and 'NoneType'
+ERROR 2021-04-05 18:00:29,273 basehttp 27706 123145530888192 "POST /deals/new/ HTTP/1.1" 500 80983
+INFO 2021-04-05 18:01:03,919 autoreload 27769 140736273863552 Watching for file changes with StatReloader
+ERROR 2021-04-05 18:01:15,936 view_method 27769 123145550749696 Error in making API request 
+ERROR 2021-04-05 18:01:15,936 view_method 27769 123145550749696 Response is empty
+ERROR 2021-04-05 18:01:15,937 view_method 27769 123145550749696 Response json is empty
+ERROR 2021-04-05 18:01:17,816 view_method 27769 123145550749696 Error in making API request 
+ERROR 2021-04-05 18:01:17,816 view_method 27769 123145550749696 Response is empty
+ERROR 2021-04-05 18:01:17,816 view_method 27769 123145550749696 Response json is empty
+ERROR 2021-04-05 18:01:17,817 view_method 27769 123145550749696 No dataframe to filter
+ERROR 2021-04-05 18:01:18,339 log 27769 123145550749696 Internal Server Error: /deals/new/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 83, in make_query
+    query = formatting(property_status=deal_data['property_status'], params=params
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/view_method.py", line 224, in formatting
+    df = percentage_average_market_data(property_status=property_status, params=params, period=period, compare=compare, percentage=percentage)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/view_method.py", line 208, in percentage_average_market_data
+    p_value = average_price - ((percentage/100) * average_price)
+TypeError: unsupported operand type(s) for *: 'float' and 'NoneType'
+ERROR 2021-04-05 18:01:18,520 basehttp 27769 123145550749696 "POST /deals/new/ HTTP/1.1" 500 80983
+INFO 2021-04-05 18:22:43,678 autoreload 27769 140736273863552 /Users/home/Documents/GitHub/WhiteCow2/deal/config.py changed, reloading.
+INFO 2021-04-05 18:22:55,265 autoreload 28610 140736273863552 Watching for file changes with StatReloader
+INFO 2021-04-05 18:23:48,791 basehttp 28610 123145479888896 "GET / HTTP/1.1" 200 13285
+INFO 2021-04-05 18:23:54,164 basehttp 28610 123145479888896 "GET /deals/new/ HTTP/1.1" 200 12250
+ERROR 2021-04-05 18:24:09,892 view_method 28610 123145479888896 Error in making API request 
+ERROR 2021-04-05 18:24:09,893 view_method 28610 123145479888896 Response is empty
+ERROR 2021-04-05 18:24:09,893 view_method 28610 123145479888896 Response json is empty
+ERROR 2021-04-05 18:24:11,768 view_method 28610 123145479888896 Error in making API request 
+ERROR 2021-04-05 18:24:11,769 view_method 28610 123145479888896 Response is empty
+ERROR 2021-04-05 18:24:11,769 view_method 28610 123145479888896 Response json is empty
+ERROR 2021-04-05 18:24:11,769 view_method 28610 123145479888896 No dataframe to filter
+ERROR 2021-04-05 18:24:11,887 log 28610 123145479888896 Internal Server Error: /deals/new/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 83, in make_query
+    query = formatting(property_status=deal_data['property_status'], params=params
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/view_method.py", line 224, in formatting
+    df = percentage_average_market_data(property_status=property_status, params=params, period=period, compare=compare, percentage=percentage)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/view_method.py", line 208, in percentage_average_market_data
+    p_value = average_price - ((percentage/100) * average_price)
+TypeError: unsupported operand type(s) for *: 'float' and 'NoneType'
+ERROR 2021-04-05 18:24:11,889 basehttp 28610 123145479888896 "POST /deals/new/ HTTP/1.1" 500 80983

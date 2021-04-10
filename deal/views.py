@@ -11,6 +11,8 @@ import requests, json
 from .view_method import *
 from django.contrib.auth.models import User
 from django_pandas.io import read_frame
+import ujson
+from django.core.serializers.json import DjangoJSONEncoder
 
 logger = logging.getLogger('django')
 
@@ -152,6 +154,7 @@ def display_search_query(request):
                             , period=computeDeal_data['period'], compare=computeDeal_data['compare'],percentage=computeDeal_data['percentage_compare_average_price'])
 
             query = query.reset_index(drop=True)
+            print(query['photos'].iloc[0])
 
             global display
             def display():
@@ -166,6 +169,8 @@ def display_search_query(request):
         form_compute = DealComputeDealForm(initial = data[3])
         form_asset = DealAssetTypeForm(initial = data[1])
         query= data[2]
+
+        print(query['photos'].iloc[0][0]['href'])
     return render(request, 'deal/Views/display2.html', {'query':query,'adress':form_adress, 'asset':form_asset, 'compute':form_compute,'deal':form_deal, 'property_status':data[4]['property_status']})
     
 
@@ -387,7 +392,9 @@ def save_refresh(request, pk):
        
         query= None
     return render(request, 'deal/Views/save_refresh.html', {'query':query,'adress':form_adress, 'asset':form_asset, 'compute':form_compute,'deal':form_deal, 'de':deal.id})
-    
+def convert(o):
+    if isinstance(o, np.int64): return int(o)  
+    raise TypeError   
 def detail_view_deal(request,pk):
 
     deal = detail_deal()
@@ -401,9 +408,16 @@ def detail_view_deal(request,pk):
         else:
             data = SubscriptionDataForSale.objects.filter(deal_id = deal.pk)
         data = read_frame(data)
-        print(data)
+        data = data.iloc[pk]
+        data = data.to_frame()
+        data = data.to_json(orient="index")
+        parsed = json.loads(data)
+        data = json.dumps(parsed, indent=20) 
+       
+
+
         
-        return HttpResponse(data.iloc[pk])
+        #return HttpResponse(data)
         #render(request, 'deal/detail_deal.html', {'deal':deal.formatting().iloc[pk]})
 
         
