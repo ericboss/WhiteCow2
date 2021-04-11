@@ -10,6 +10,7 @@ ipykernel = "*"
 psycopg2 = "*"
 django-heroku = "*"
 gunicorn = "*"
+coverage = "*"
 
 [dev-packages]
 
