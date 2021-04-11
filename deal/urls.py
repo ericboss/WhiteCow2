@@ -11,5 +11,3 @@ urlpatterns = [
 
 
 ]
-def func():
-    pass
