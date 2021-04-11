@@ -13,6 +13,7 @@ gunicorn = "*"
 coverage = "*"
 django-crispy-forms = "*"
 pillow = "*"
+django-nose = "*"
 
 [dev-packages]
 
