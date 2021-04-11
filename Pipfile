@@ -11,6 +11,8 @@ psycopg2 = "*"
 django-heroku = "*"
 gunicorn = "*"
 coverage = "*"
+django-crispy-forms = "*"
+pillow = "*"
 
 [dev-packages]
 
