@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+from django.contrib import messages
+import django_heroku
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -93,8 +96,11 @@ WSGI_APPLICATION = 'WhiteCow.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_USER_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST'),
     }
 }
 
@@ -215,3 +221,10 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_EMAIL_VERIFICATION = "none"
 SOCIALACCOUNT_QUERY_EMAIL = True
 LOGIN_REDIRECT_URL = "/"
+
+
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger'
+}
+
+django_heroku.settings(locals())

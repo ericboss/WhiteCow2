@@ -1,0 +1,39 @@
+{% extends 'deal/sharefiles/base.html' %} {% block content %}
+
+
+ 
+<div class="card mt-4 ml-4 mr-4">
+<form action="{% url 'address_assets' %}" method="post">
+   
+
+    <div class="card-body">
+      <p class="h6">Address:</p>
+        {% include 'partials/_messages.html'%} {% csrf_token %}
+       
+        <div class="form-row">
+           <div class="col col-md-6">
+            <input type="text" class="form-control" placeholder="City" name ="city">
+          </div>
+          <div class="col col-md-2">
+            <input type="text" class="form-control" placeholder="State code" name = "state_code">
+         </div>
+         <div class="col col-md-4">
+            <input type="text" class="form-control" placeholder="Postal code" name = "location">
+         </div>
+       </div>
+        
+    </div>
+
+        
+    </div>
+    <input
+          type="submit"
+          value="Next"
+          class="btn btn-primary btn-primary-sm"
+        />
+      </form>
+    
+  </div>
+  
+
+{% endblock content %}

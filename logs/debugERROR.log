@@ -4919,3 +4919,467 @@ Traceback (most recent call last):
     p_value = average_price - ((percentage/100) * average_price)
 TypeError: unsupported operand type(s) for *: 'float' and 'NoneType'
 ERROR 2021-04-05 18:24:11,889 basehttp 28610 123145479888896 "POST /deals/new/ HTTP/1.1" 500 80983
+ERROR 2021-04-10 16:59:24,020 log 5889 123145555353600 Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 8, in index
+    return render(request, 'deal/subscriptions.html')
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/loader_tags.py", line 195, in render
+    return template.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 172, in render
+    return self._render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/defaulttags.py", line 312, in render
+    return nodelist.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/urls/base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/urls/resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'deals-new' not found. 'deals-new' is not a valid view function or pattern name.
+ERROR 2021-04-10 16:59:24,027 basehttp 5889 123145555353600 "GET / HTTP/1.1" 500 177485
+ERROR 2021-04-10 17:02:36,619 log 5889 123145555353600 Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 8, in index
+    return render(request, 'deal/subscriptions.html')
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/loader_tags.py", line 195, in render
+    return template.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 172, in render
+    return self._render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/defaulttags.py", line 312, in render
+    return nodelist.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/urls/base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/urls/resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'deals-new' not found. 'deals-new' is not a valid view function or pattern name.
+ERROR 2021-04-10 17:02:36,641 basehttp 5889 123145555353600 "GET / HTTP/1.1" 500 177622
+ERROR 2021-04-10 17:02:41,533 log 5889 123145555353600 Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 8, in index
+    return render(request, 'deal/subscriptions.html')
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/loader_tags.py", line 195, in render
+    return template.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 172, in render
+    return self._render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/defaulttags.py", line 312, in render
+    return nodelist.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/urls/base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/urls/resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'deals-new' not found. 'deals-new' is not a valid view function or pattern name.
+ERROR 2021-04-10 17:02:41,535 basehttp 5889 123145555353600 "GET / HTTP/1.1" 500 177622
+ERROR 2021-04-10 17:03:13,246 log 6075 123145573756928 Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 8, in index
+    return render(request, 'deal/subscriptions.html')
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/loader_tags.py", line 195, in render
+    return template.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 172, in render
+    return self._render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/defaulttags.py", line 312, in render
+    return nodelist.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/urls/base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/urls/resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'deals-new' not found. 'deals-new' is not a valid view function or pattern name.
+ERROR 2021-04-10 17:03:13,251 basehttp 6075 123145573756928 "GET / HTTP/1.1" 500 177622
+ERROR 2021-04-10 19:06:43,280 log 13543 123145484574720 Internal Server Error: /add-deal
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 29, in add_deal
+    messages.error(request, 'Name is required')
+NameError: name 'messages' is not defined
+ERROR 2021-04-10 19:06:43,282 basehttp 13543 123145484574720 "POST /add-deal HTTP/1.1" 500 64943
+ERROR 2021-04-10 19:07:41,848 log 13627 123145360105472 Internal Server Error: /add-deal
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 31, in add_deal
+    return render(request, 'deal/Views/add_deal.html', context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: deal/Views/add_deal.html
+ERROR 2021-04-10 19:07:42,022 basehttp 13627 123145360105472 "POST /add-deal HTTP/1.1" 500 82318
+ERROR 2021-04-10 19:37:07,560 log 15281 123145345507328 Internal Server Error: /add-deal
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 30, in add_deal
+    if not name:
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 30, in add_deal
+    if not name:
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+ERROR 2021-04-10 19:37:07,565 basehttp 15281 123145345507328 "POST /add-deal HTTP/1.1" 500 77510
+ERROR 2021-04-10 19:50:55,009 log 16191 123145511292928 Internal Server Error: /add-deal
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/utils/datastructures.py", line 76, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 26, in add_deal
+    name = request.POST['name']
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/utils/datastructures.py", line 78, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'name'
+ERROR 2021-04-10 19:50:55,012 basehttp 16191 123145511292928 "POST /add-deal HTTP/1.1" 500 73634
+ERROR 2021-04-10 19:51:48,525 log 16191 123145511292928 Internal Server Error: /add-deal
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/utils/datastructures.py", line 76, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 26, in add_deal
+    name = request.POST['name']
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/utils/datastructures.py", line 78, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'name'
+ERROR 2021-04-10 19:51:48,532 basehttp 16191 123145511292928 "POST /add-deal HTTP/1.1" 500 73634
+ERROR 2021-04-10 19:51:57,502 log 16191 123145511292928 Internal Server Error: /add-deal
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/utils/datastructures.py", line 76, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 26, in add_deal
+    name = request.POST['name']
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/utils/datastructures.py", line 78, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'name'
+ERROR 2021-04-10 19:51:57,504 basehttp 16191 123145511292928 "POST /add-deal HTTP/1.1" 500 73634
+ERROR 2021-04-10 19:52:27,907 log 16191 123145511292928 Internal Server Error: /add-deal/address_assets
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 50, in address_asset
+    return render(request, 'deal/Views/address_asset.html', context)
+NameError: name 'context' is not defined
+ERROR 2021-04-10 19:52:27,910 basehttp 16191 123145511292928 "POST /add-deal/address_assets HTTP/1.1" 500 65162
+ERROR 2021-04-10 19:53:27,244 log 16421 123145387847680 Internal Server Error: /add-deal/address_assets
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 188, in _get_response
+    self.check_response(response, callback)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 309, in check_response
+    raise ValueError(
+ValueError: The view deal.views.address_asset didn't return an HttpResponse object. It returned None instead.
+ERROR 2021-04-10 19:53:27,260 basehttp 16421 123145387847680 "POST /add-deal/address_assets HTTP/1.1" 500 65977
+ERROR 2021-04-11 08:13:23,739 log 2084 123145491349504 Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/Documents/GitHub/WhiteCow2/deal/views.py", line 10, in index
+    return render(request, 'deal/Views/dashboard.html')
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/loader_tags.py", line 195, in render
+    return template.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 172, in render
+    return self._render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/defaulttags.py", line 312, in render
+    return nodelist.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/allauth/socialaccount/templatetags/socialaccount.py", line 19, in render
+    provider = providers.registry.by_id(provider_id, request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/allauth/socialaccount/providers/__init__.py", line 21, in by_id
+    return self.provider_map[id](request=request)
+KeyError: 'github'
+ERROR 2021-04-11 08:13:23,881 basehttp 2084 123145491349504 "GET / HTTP/1.1" 500 176682
+ERROR 2021-04-11 08:14:19,580 log 2097 123145602957312 Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "django_site" does not exist
+LINE 1: ..."django_site"."domain", "django_site"."name" FROM "django_si...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/views/decorators/cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/contrib/admin/sites.py", line 414, in login
+    return LoginView.as_view(**defaults)(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/views/decorators/debug.py", line 89, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/views/decorators/cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/contrib/auth/views.py", line 63, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/views/generic/edit.py", line 133, in get
+    return self.render_to_response(self.get_context_data())
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/contrib/auth/views.py", line 97, in get_context_data
+    current_site = get_current_site(self.request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/contrib/sites/shortcuts.py", line 13, in get_current_site
+    return Site.objects.get_current(request)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/contrib/sites/models.py", line 58, in get_current
+    return self._get_site_by_id(site_id)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/contrib/sites/models.py", line 30, in _get_site_by_id
+    site = self.get(pk=site_id)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/db/models/query.py", line 431, in get
+    num = len(clone)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/db/models/query.py", line 262, in __len__
+    self._fetch_all()
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/db/models/query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1169, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/home/.local/share/virtualenvs/WhiteCow2-UdVHqJzA/lib/python3.9/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "django_site" does not exist
+LINE 1: ..."django_site"."domain", "django_site"."name" FROM "django_si...
+                                                             ^
+
+ERROR 2021-04-11 08:14:19,586 basehttp 2097 123145602957312 "GET /admin/login/?next=/admin/ HTTP/1.1" 500 195750
