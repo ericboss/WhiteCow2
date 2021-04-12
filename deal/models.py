@@ -63,12 +63,54 @@ class AssetsForRent(models.Model):
     home_size_max = models.IntegerField(blank=True, null=True)
     in_unit_features = models.CharField(max_length=255, blank=True, null=True)
     community_ammenities = models.CharField(max_length=255, blank=True, null=True)
-    cats_ok = models.BooleanField(null=True, blank=True)
-    dogs_ok = models.BooleanField(null=True, blank=True)
+    cats_ok = models.CharField(max_length=30, blank=True, null=True)
+    dogs_ok = models.CharField(max_length=30, blank=True, null=True)
 
 
     def __str__(self):
         return "Assets for rent"
+
+class Sort(models.Model):
+    name = models.CharField(max_length=30, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+    
+class PropertyType(models.Model):
+    name = models.CharField(max_length=30, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+class ExpandSearchRadius(models.Model):
+    name = models.CharField(max_length=30, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+class HomeSize(models.Model):
+
+    value = models.IntegerField(blank=True, null=True)
+
+    
+   
+class InUnitFeatures(models.Model):
+    name = models.CharField(max_length=30, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+class CommunityAmmenities(models.Model):
+    name = models.CharField(max_length=30, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+class Ok (models.Model):
+    name = models.CharField(max_length=30, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+    
+
 
 class AssetsForSale(models.Model):
     
@@ -111,19 +153,88 @@ class AssetsForSale(models.Model):
     def __str__(self):
         return "Assets for sale"
 
-class ComputeDeals(models.Model):
-    """
-    Compute Deals Class contains attributes for making some computations for the deal.
-    - period: The user might want to compare data against average market price for the last x period( 1 month, 3 months etc)
-    - compare: The user might want to get data that are above/below average market price
-    - percentage_compare_average_price: The user might want to get data that are X% above/below average market price.
-    """
-    
-    deal = models.OneToOneField(Deals, on_delete=models.CASCADE, related_name="deal_compute_deal", blank=True, null=True)
-    period = models.IntegerField( null=True, blank=True)
-    compare = models.CharField(max_length=20, default=None)
-    percentage_compare_average_price = models.IntegerField(default=0)
+class SortSale(models.Model):
+    name = models.CharField(max_length=30, blank=True, null=True)
 
+    def __str__(self):
+        return self.name
+
+class PropertyTypeSale(models.Model):
+    name = models.CharField(max_length=30, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+class PropertyTypeNycOnly(models.Model):
+    name = models.CharField(max_length=30, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+
+
+class NoHoaFee(models.Model):
+    name = models.CharField(max_length=30, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+class HomeSizeMinSale(models.Model):
+
+    value = models.IntegerField(blank=True, null=True)
+
+class HomeSizeMaxSale(models.Model):
+
+    value = models.IntegerField(blank=True, null=True)
+
+class LotSize(models.Model):
+
+    value = models.IntegerField(blank=True, null=True)
+
+class Stories(models.Model):
+    name = models.CharField(max_length=30, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+class Garage(models.Model):
+    name = models.CharField(max_length=30, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+class HeatingCooling(models.Model):
+    name = models.CharField(max_length=30, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+class InsideRooms(models.Model):
+    name = models.CharField(max_length=30, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+class OutsideFeatures(models.Model):
+    name = models.CharField(max_length=30, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+class LotViews(models.Model):
+    name = models.CharField(max_length=30, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+class CommunityAmmenitiesSale(models.Model):
+    name = models.CharField(max_length=30, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+class FeaturesInNycOnly(models.Model):
+    name = models.CharField(max_length=30, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
 
 
 class SubscriptionDataForRent(models.Model):
