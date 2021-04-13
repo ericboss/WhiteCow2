@@ -1,5 +1,5 @@
-
-host = "realtor.p.rapidapi.com"
+api_key="af2b0d8315mshd2cfb886121c4b2p149f15jsn85834aeacb17"
+host = "realtor-com-real-estate.p.rapidapi.com"
 url_for_sale = "https://realtor-com-real-estate.p.rapidapi.com/for-sale"
 url_for_rent = "https://realtor-com-real-estate.p.rapidapi.com/for-rent"
-url_historic = "https://realtor.p.rapidapi.com/properties/v2/list-sold"
+url_estimate = "https://realtor-com-real-estate.p.rapidapi.com/for-sale/home-estimate-value"

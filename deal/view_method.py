@@ -15,7 +15,6 @@ def property_search_query(url, query_params):
             "x-rapidapi-key": api_key
         }
        
-
         # response
 
         response = requests.get(url, headers=headers, params=query_params)
@@ -24,61 +23,74 @@ def property_search_query(url, query_params):
         else:
             logger.error(f"Error in making API request ")
             return None
-
-def response_json(response):
-        """
-        Convert response to json
-        """
-        if response:
-            to_json = response.json()
-            return to_json
-        else:
-            logger.error("Response is empty")
-            return None
-
-def process_json_response(response_json):
-        """
-        Process the list for sale API response.
-        Convert each listing to a dataframe, append to a list, and concatenate to one dataframe.
-
-        Parameters
-        ----------
-        @response_json [dictionary]: API response from search_query
-
-        Returns
-        -------
-        [dataframe] Dataframe of all list for responses
-
-        """
-
-        # empty dataframe
-        dataframe_list = []
-        if response_json is not None:
-            logger.debug("Converting response json to pandas data frame")
-        # iterate through each for sale listing
-
-            for l in response_json['properties']:
-
-                # convert each listing to dataframe
-                _temp_df = pd.DataFrame.from_dict(l, orient='index').T
-
-            # append to dataframe list for all listings
-                dataframe_list.append(_temp_df)
-
-            # concatenate all dataframes, for missing col values enter null value
-            return pd.concat(dataframe_list, axis=0, ignore_index=True, sort=False)
-        else:
-            logger.error("Response json is empty")
-            return None
+ 
+def process_query_response(response):
+    if response is not None:  
+        content = json.loads(response.content)
+        df = pd.DataFrame.from_dict(content['data']['results'])
+        return df 
+    else:
+        return None
 
 
-def get_sold_data(params):
-        # Get historic similar assets data in json
-        hist = property_search_query(url=url_historic, query_params=params)
-        to_json = response_json(hist)
+def get_estimate_value(property_id):
+    try:
+        url = url_estimate
+        querystring = {"property_id":property_id}
+        headers = {
+        'x-rapidapi-key': api_key,
+        'x-rapidapi-host': host
+        }
+        response = requests.request("GET", url, headers=headers, params=querystring)
+        data = json.loads(response.content)
+        return data
+    except:
+        return None
 
-        df = process_json_response(to_json)
-        return df
+
+def calculate_deal(list_property_id, df):
+    deal_dict = {}
+    for_cast = None
+    for list_ in list_property_id:
+        data = get_estimate_value(list_)
+        try:
+            for_cast= data['data']['forecast_values'][0]['estimates'][-1]['estimate']
+        except:
+            for_cast= 0
+        df2 =df[df["property_id"] == list_]["list_price"]
+        initial=df2.to_list()[0]
+        percentage_change = ((for_cast - initial)/initial) *100
+        deal_dict[list_] = percentage_change
+    return deal_dict
+
+def get_deal_datafrane(deal_dict, df):
+    sort_deal = sorted(deal_dict.items(), key=lambda x: x[1], reverse=True)
+    property_id_deal = [k[0] for k in sort_deal][:3]
+    df_deal = df[df['property_id'].isin(property_id_deal) ]
+    return df_deal
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
