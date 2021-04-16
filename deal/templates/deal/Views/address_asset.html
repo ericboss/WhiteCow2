@@ -4,7 +4,7 @@
  
 <div class="card mt-4 ml-4 mr-4">
 <form action="{% url 'address_assets' %}" method="post">
-   
+  
 
     <div class="card-body">
       <p class="h6">Address:</p>
@@ -51,19 +51,21 @@
     <table class="table table-stripped table-hover">
       <thead>
         <tr>
-          <th>Price ($)</th>
+          <th>Price (USD)</th>
           <th>Description</th>
           <th>Location</th>
         
           <th></th>
         </tr>
       </thead>
+     
+
   
       <tbody>
         {% for deal in deals.itertuples%}
         <tr>
           <td>{{deal.list_price}}</td>
-          <td>{{deal.description.type}}, baths:{{deal.description.baths}} beds:{{deal.description.beds}} Garage:{{deal.description.garage}}, {{deal.description.sqft}} sqft</td>
+          <td>{{deal.description.type}},  lot:{{deal.description.lot_sqft}} sqft beds:{{deal.description.beds}} Garage:{{deal.description.garage}}, {{deal.description.sqft}} sqft</td>
           <td>{{deal.location.address.postal_code}}, {{deal.location.address.state}} {{deal.location.address.state_code}}</td>
           
   
@@ -78,8 +80,16 @@
   
         {% endfor %}
       </tbody>
+
+    
     </table>
+
+    
   </div>
+  <form action="{% url 'save_deal' %}" method="post">
+    {% csrf_token %}
+      <input type="submit" value="Save" class="btn btn-primary btn-primary-sm">
+    </form>
   
 
 {% endblock content %}

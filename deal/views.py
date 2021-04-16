@@ -2,17 +2,25 @@ from django.shortcuts import render,redirect
 from .models import(Deals, PropertyStatus, Adress,AssetsForRent,Sort,PropertyType,ExpandSearchRadius,
 HomeSize, InUnitFeatures,CommunityAmmenities,Ok,SortSale, PropertyTypeSale, PropertyTypeNycOnly, NoHoaFee,
 HomeSizeMinSale, HomeSizeMaxSale,LotSize,Stories,Garage,HeatingCooling,InsideRooms,OutsideFeatures,LotViews,CommunityAmmenitiesSale,
-FeaturesInNycOnly)
+FeaturesInNycOnly,AssetsForSale,SubscriptionDataForSale)
 from django.contrib import messages
 from .view_method import *
 import json,requests
+from datetime import datetime
+from django_pandas.io import read_frame
+from django.db import IntegrityError
+import sys,six
 
 # Create your views here.
 def index(request):
     """
     This view is to display the landing page
+
     """
-    return render(request, 'deal/Views/dashboard.html')
+
+    deal = Deals.objects.all()
+    context = {'saved_deals':deal}
+    return render(request, 'deal/Views/dashboard.html',context)
 
 deal_data =None
 def add_deal(request):
@@ -36,7 +44,7 @@ def add_deal(request):
         
         global  deal_data
         def deal_data():
-            return property_status
+            return property_status, name
         if not name:
             messages.error(request, 'Name is required')
             return render(request, 'deal/Views/add-deal.html', context)
@@ -45,7 +53,7 @@ def add_deal(request):
 
         return redirect('address_assets')
 
-
+data_to_save = None
 def address_asset(request):
     sort  = Sort.objects.all()
     property_type = PropertyType.objects.all()
@@ -97,7 +105,7 @@ def address_asset(request):
         'features_in_nyc_only':features_in_nyc_only
 
     }
-    property_status = deal_data()
+    property_status = deal_data()[0]
     if request.method == 'GET':
         
         context['property_status'] = property_status
@@ -123,6 +131,11 @@ def address_asset(request):
         query_data.pop('csrfmiddlewaretoken')
         d = {k:v.strip('[]') for k,v in query_data.items()}
 
+       
+        name = deal_data()[1]
+
+        
+
         if property_status == 'Rent':
             #response = property_search_query(url = url_for_rent, query_params=d)
         
@@ -143,7 +156,7 @@ def address_asset(request):
         if property_status == 'Sale':
             response = property_search_query(url = url_for_sale, query_params=d)
             df = process_query_response(response=response)
-            ##df = pd.read_csv('/Users/home/Documents/GitHub/WhiteCow2/deal/deal_df.csv')
+            #deal_df = pd.read_csv('/Users/home/Documents/GitHub/WhiteCow2/deal/deal_df.csv')
             #df = pd.read_csv('/Users/home/Documents/GitHub/WhiteCow2/sale.csv')
             list_property_id = df['property_id'].tolist()[:3]
             deal_dict = calculate_deal(list_property_id, df)
@@ -152,12 +165,17 @@ def address_asset(request):
            
             deal_df = deal_df.where(deal_df.notnull(), None)
 
-           # deal_df["description"] = deal_df["description"].apply(eval)
+            deal_df = formatting(deal_df)
+            context['deals'] = deal_df
+            
+           
+            property_type = d['property_type']
+            context['property_type'] = property_type
 
-            deal_df["description"] = deal_df["description"].apply(json.dumps)
-            deal_df["description"] = deal_df["description"].apply(json.loads)
-
-            #deal_df["location"] = deal_df["location"].apply(eval)
+           
+            global data_to_save
+            def data_to_save():
+                return name,city,state_code,location, d, deal_df
 
             context['deals'] = deal_df
             return render(request, 'deal/Views/address_asset.html', context)
@@ -165,4 +183,79 @@ def address_asset(request):
 
 
 
+def save_deal(request):
+    data = data_to_save()
+    name = data[0]
+    city = data[1]
+    state_code = data[2]
+    location = data[3]
+    assets = data[4]
+    deal= data[5]
 
+
+    if request.method == 'POST':
+        
+
+        Deals.objects.create(name = name,owner=request.user)
+
+        de = Deals.objects.latest('id')
+
+        assets.pop('city')
+        assets.pop('state_code')
+        assets.pop('location')
+        assets['owner'] = request.user
+        assets['deal'] =  de
+        deal['owner'] = request.user
+        deal['deal'] = de
+        for k  in assets :
+            if assets[k] == '':
+                assets[k] = None
+        
+
+    
+        Adress.objects.create(owner=request.user,deal=de,city=city,state_code=state_code, location=location)
+        AssetsForSale.objects.create(**assets)
+
+
+        entries = []       
+    
+        for e in deal.T.to_dict().values():
+            su = SubscriptionDataForSale(**e)
+ 
+            try: 
+                su.save()
+            except IntegrityError:
+
+            # The save might have been subject to a race condition. 
+                # If it is, a record with this object's pk exists, so try to update it. 
+                exc_info = sys.exc_info()
+                try:
+                    su.save(force_update=True)
+                except:
+                    pass
+        
+       # SubscriptionDataForSale.objects.bulk_create(entries)
+
+        return redirect('index')
+
+
+def view_deal_detail(request, pk):
+
+    deal = Deals.objects.get(pk=pk)
+
+    data = SubscriptionDataForSale.objects.filter(deal_id =pk)
+
+    deal_df = read_frame(data)
+    
+    context = {
+        'deals':deal_df
+    }
+    return render(request,'deal/Views/deal-detail.html',context )
+
+
+
+def deal_delete(request, id):
+    Deals.objects.get(pk = id).delete()
+
+    return redirect('index')
+    

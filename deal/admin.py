@@ -2,9 +2,11 @@ from django.contrib import admin
 from .models import (Deals, PropertyStatus, Adress,AssetsForRent,Sort,PropertyType,ExpandSearchRadius,
 HomeSize, InUnitFeatures,CommunityAmmenities,Ok,SortSale, PropertyTypeSale, PropertyTypeNycOnly, NoHoaFee,
 HomeSizeMinSale, HomeSizeMaxSale,LotSize,Stories,Garage,HeatingCooling,InsideRooms,OutsideFeatures,LotViews,CommunityAmmenitiesSale,
-FeaturesInNycOnly)
+FeaturesInNycOnly,AssetsForSale,SubscriptionDataForSale)
 
 admin.site.register(PropertyStatus)
+admin.site.register(SubscriptionDataForSale)
+admin.site.register(AssetsForSale)
 admin.site.register(Deals)
 admin.site.register(Adress)
 admin.site.register(AssetsForRent)

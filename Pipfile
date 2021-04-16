@@ -17,6 +17,9 @@ django-nose = "*"
 django-embed-video = "*"
 pandas = "*"
 numpy = "*"
+django-pandas = "*"
+six = "*"
+celery = "*"
 
 [dev-packages]
 

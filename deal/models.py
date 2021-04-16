@@ -7,18 +7,30 @@ from .config import *
 import json
 from django.contrib.auth.models import User
 import logging
+from django.utils.timezone import now
 
 logger = logging.getLogger('django')
 
 # Create your models here.
 class Deals(models.Model):
     name = models.CharField(max_length=30)
-    property_status = models.CharField(max_length=10)
+    date = models.DateTimeField(default=now, blank=True, null=True)
+    owner = models.ForeignKey(to=User, on_delete=models.CASCADE, blank=True, null=True)
+    
 
     def __str__(self):
         return self.name
+
     class Meta:
         verbose_name_plural = 'Deals'
+        ordering = ['-date']
+
+class SchedulerTime(models.Model):
+    name = models.CharField(max_length=40, blank=True, null = True)
+
+    def __str__(self):
+        return self.name
+    
 
 class PropertyStatus(models.Model):
     name = models.CharField(max_length=30)
@@ -34,6 +46,7 @@ class Adress(models.Model):
     """
     Addres Class contains attributes necessary for saving the Adress of a deal.
     """
+    owner = models.ForeignKey(to=User, on_delete=models.CASCADE, blank=True, null=True)
     deal = models.OneToOneField(Deals, on_delete=models.CASCADE, related_name="deal_address", blank=True, null=True)
     city = models.CharField(max_length=40)
     state_code = models.CharField(max_length=10)
@@ -113,7 +126,8 @@ class Ok (models.Model):
 
 
 class AssetsForSale(models.Model):
-    
+
+    owner = models.ForeignKey(to=User, on_delete=models.CASCADE, blank=True, null=True) 
     deal = models.OneToOneField(Deals, on_delete=models.CASCADE, related_name="deal_assets_for_sale", blank=True, null=True)
 
     sort = models.CharField(max_length=255, blank=True, null=True)
@@ -238,7 +252,7 @@ class FeaturesInNycOnly(models.Model):
 
 
 class SubscriptionDataForRent(models.Model):
-
+    
     deal = models.OneToOneField(Deals, on_delete=models.CASCADE, related_name="deal_subscription_for_rent", blank=True, null=True)
     photos = models.JSONField(blank=True, null = True)
     branding = models.JSONField(blank=True, null = True)
@@ -281,8 +295,7 @@ class SubscriptionDataForRent(models.Model):
 
 
 class SubscriptionDataForSale(models.Model):
-
-    deal = models.OneToOneField(Deals, on_delete=models.CASCADE, related_name="deal_subscription_for_sale", blank=True, null=True)
+    
     primary_photo = models.JSONField(blank=True, null = True)
     last_update_date = models.DateTimeField(blank=True, null = True )
     source = models.JSONField(blank=True, null = True)
@@ -305,8 +318,11 @@ class SubscriptionDataForSale(models.Model):
     listing_id = models.CharField(max_length=50,blank=True, null = True )
     price_reduced_amount = models.CharField(max_length=50,blank=True, null = True )
     location = models.JSONField(blank=True, null = True)
-    matterport = models.BooleanField(blank=True, null = True )
+    matterport = models.CharField(max_length=10,blank=True, null = True )
+    owner = models.ForeignKey(to=User, on_delete=models.CASCADE, blank=True, null=True)
+    deal = models.OneToOneField(Deals, on_delete=models.SET_NULL, related_name="deal_subscription_for_sale", blank=True, null=True)
 
+    
     
 
 
