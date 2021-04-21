@@ -191,6 +191,7 @@ def save_deal(request):
     location = data[3]
     assets = data[4]
     deal= data[5]
+    
 
 
     if request.method == 'POST':
@@ -199,6 +200,8 @@ def save_deal(request):
         Deals.objects.create(name = name,owner=request.user)
 
         de = Deals.objects.latest('id')
+        deal['owner'] = request.user
+        deal['deal'] = de
 
         assets.pop('city')
         assets.pop('state_code')
@@ -220,19 +223,11 @@ def save_deal(request):
         entries = []       
     
         for e in deal.T.to_dict().values():
-            su = SubscriptionDataForSale(**e)
- 
-            try: 
-                su.save()
-            except IntegrityError:
 
-            # The save might have been subject to a race condition. 
-                # If it is, a record with this object's pk exists, so try to update it. 
-                exc_info = sys.exc_info()
-                try:
-                    su.save(force_update=True)
-                except:
-                    pass
+            entries.append(SubscriptionDataForSale(**e))
+        SubscriptionDataForSale.objects.bulk_create(entries)
+ 
+            
         
        # SubscriptionDataForSale.objects.bulk_create(entries)
 
@@ -243,7 +238,7 @@ def view_deal_detail(request, pk):
 
     deal = Deals.objects.get(pk=pk)
 
-    data = SubscriptionDataForSale.objects.filter(deal_id =pk)
+    data = SubscriptionDataForSale.objects.filter(deal_id =pk, owner=request.user)
 
     deal_df = read_frame(data)
     
@@ -254,8 +249,9 @@ def view_deal_detail(request, pk):
 
 
 
-def deal_delete(request, id):
-    Deals.objects.get(pk = id).delete()
+def deal_delete(request, pk):
+    deal_id = Deals.objects.get(owner=request.user).pk
+    deal_id.delete()
 
     return redirect('index')
     
