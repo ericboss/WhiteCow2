@@ -7,7 +7,6 @@ name = "pypi"
 django = "*"
 django-allauth = "==0.43.0"
 ipykernel = "*"
-psycopg2 = "*"
 django-heroku = "*"
 gunicorn = "*"
 coverage = "*"
@@ -20,6 +19,7 @@ numpy = "*"
 django-pandas = "*"
 six = "*"
 celery = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 
