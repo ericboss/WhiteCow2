@@ -13,9 +13,10 @@ logger = logging.getLogger('django')
 
 # Create your models here.
 class Deals(models.Model):
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=30, blank=True, null=True)
     date = models.DateTimeField(default=now, blank=True, null=True)
     owner = models.ForeignKey(to=User, on_delete=models.CASCADE, blank=True, null=True)
+    property_status = models.CharField(max_length=30, blank=True, null=True)
     
 
     def __str__(self):
@@ -47,7 +48,7 @@ class Adress(models.Model):
     Addres Class contains attributes necessary for saving the Adress of a deal.
     """
     owner = models.ForeignKey(to=User, on_delete=models.CASCADE, blank=True, null=True)
-    deal = models.OneToOneField(Deals, on_delete=models.CASCADE, related_name="deal_address", blank=True, null=True)
+    deal = models.ForeignKey(Deals, on_delete=models.CASCADE, related_name="deal_address", blank=True, null=True)
     city = models.CharField(max_length=40)
     state_code = models.CharField(max_length=10)
     location = models.CharField(max_length=10, blank=True, default='') #postal code
@@ -60,7 +61,7 @@ class Adress(models.Model):
 
 class AssetsForRent(models.Model):
 
-    deal = models.OneToOneField(Deals, on_delete=models.CASCADE, related_name="deal_assets_for_rent", blank=True, null=True)
+    deal = models.ForeignKey(Deals, on_delete=models.CASCADE, related_name="deal_assets_for_rent", blank=True, null=True)
     
     sort = models.CharField(max_length=255, blank=True, null=True)
     price_min = models.IntegerField(blank=True, null=True)
@@ -128,7 +129,7 @@ class Ok (models.Model):
 class AssetsForSale(models.Model):
 
     owner = models.ForeignKey(to=User, on_delete=models.CASCADE, blank=True, null=True) 
-    deal = models.OneToOneField(Deals, on_delete=models.CASCADE, related_name="deal_assets_for_sale", blank=True, null=True)
+    deal = models.ForeignKey(Deals, on_delete=models.CASCADE, related_name="deal_assets_for_sale", blank=True, null=True)
 
     sort = models.CharField(max_length=255, blank=True, null=True)
     price_min = models.IntegerField(blank=True, null=True)
@@ -253,7 +254,7 @@ class FeaturesInNycOnly(models.Model):
 
 class SubscriptionDataForRent(models.Model):
     
-    deal = models.OneToOneField(Deals, on_delete=models.CASCADE, related_name="deal_subscription_for_rent", blank=True, null=True)
+    deal = models.ForeignKey(Deals, on_delete=models.CASCADE, related_name="deal_subscription_for_rent", blank=True, null=True)
     photos = models.JSONField(blank=True, null = True)
     branding = models.JSONField(blank=True, null = True)
     other_listings = models.JSONField(blank=True, null = True)
@@ -320,7 +321,7 @@ class SubscriptionDataForSale(models.Model):
     location = models.JSONField(blank=True, null = True)
     matterport = models.CharField(max_length=10,blank=True, null = True )
     owner = models.ForeignKey(to=User, on_delete=models.CASCADE, blank=True, null=True)
-    deal = models.OneToOneField(Deals, on_delete=models.SET_NULL, related_name="deal_subscription_for_sale", blank=True, null=True)
+    deal = models.ForeignKey(Deals, on_delete=models.SET_NULL, related_name="deal_subscription_for_sale", blank=True, null=True)
 
     
     
