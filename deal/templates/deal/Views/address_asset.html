@@ -47,7 +47,7 @@
           
         </div>
 
-        <div id="dipblayDealBlock" style="visibility:hidden" class="app-table">
+        <div id="dipblayDealBlock" style="visibility:visible" class="app-table">
           <table id="dealsResult" class="table table-stripped table-hover">
             <thead>
               <tr>
@@ -81,7 +81,7 @@
         </div>
 
 
-        <form id="dipblayDealform" style="visibility:hidden" action="{% url 'save_deal' %}" method="post">
+        <form id="dipblayDealform" style="visibility:visible" action="{% url 'save_deal' %}" method="post">
           {% csrf_token %}
           <div class="submitButton">
                     <button
