@@ -9,10 +9,20 @@ import json,requests
 from datetime import datetime
 from django_pandas.io import read_frame
 from django.db import IntegrityError
+from django.contrib.auth.decorators import login_required
 import sys,six
 
 # Create your views here.
 def index(request):
+    """
+    This view is to display the landing page
+
+    """
+
+    return render(request, 'deal/Views/index.html')
+
+# Create your views here.
+def dashboad(request):
     """
     This view is to display the landing page
 
@@ -255,3 +265,54 @@ def deal_delete(request, pk):
 
     return redirect('index')
     
+@login_required
+def manage_subscriptions(request):
+    """
+    Thie view is to display the subcriptions(saved deals) a user has made
+    """
+
+    #deal = Deals.objects.all()
+    return render(request, 'deal/Views/subscriptions.html')
+
+
+@login_required
+def edit(request, pk):
+    """
+    Edit view is to saved deal. The user is presented with a form with instance values corresponding to the data 
+    the user saved. The user can edit the form and save. The page will be redirected to the page to view saved subscriptions upon save
+    """
+    logger.debug("Edit deal {0}".format(pk))
+    deal = Deals.objects.get(pk=pk)
+    if request.method == 'POST':
+        logger.debug('Submit was  a POST.')
+
+        deal_form = DealsForm(request.POST, instance=deal)
+        if deal_form.is_valid():
+            deal_form.save()
+            logger.debug('Deal was saved.')
+            return redirect('subscriptions')
+        else:
+            logger.debug("Form was invalid. Nothing will be saved.")
+    else:
+        logger.debug('Submit is NOT a post.')
+
+        deal_form = DealsForm(instance=deal)
+    return render(request, 'deal/Views/edit.html', {'edit_form': deal_form, 'deal': deal})
+
+
+@login_required
+def delete(request, pk):
+    """
+    delete view is to saved deal. The user is presented to delete page upon request. 
+    The deal is deleted upon confirmtion. The page will be redirected to the page to view saved subscriptions upon delete
+    """
+    logger.debug("Delete deal {0}".format(pk))
+    deal = Deals.objects.get(pk=pk)
+    if request.method == 'POST':
+        logger.debug('Submit was  a POST.')
+
+        deal.delete()
+        logger.debug('Deal deleted.')
+        return redirect('subscriptions')
+
+    return render(request, 'deal/Views/delete.html', {'deal': deal})

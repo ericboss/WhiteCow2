@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -122,6 +121,45 @@
             z-index: 999;
         }
         
+        .maindropSelect {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            flex-basis: 100%;
+        }
+        
+        .maindropSelect .dropselect1 {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            flex-basis: 30%;
+            margin: 5px;
+        }
+        
+        .maindropSelect .dropselect2 {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            flex-basis: 30%;
+            margin: 5px;
+        }
+        
+        .maindropSelect button {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            flex-basis: 100%;
+            margin: 20px;
+            align-items: center;
+        }
+        
+        .headerBox {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
         @media (max-width: 700px) {
             .main {
                 display: flex;
@@ -177,6 +215,49 @@
             }
         }
         
+        .submitButton {
+            display: flex;
+            flex-flow: row wrap;
+            flex-basis: 100%;
+            justify-content: center;
+            margin: 20px;
+        }
+        
+        .app-table {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        
+        #dealsResult {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        #dealsResult td,
+        #dealsResult th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        
+        #dealsResult tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        #dealsResult tr:hover {
+            background-color: #ddd;
+        }
+        
+        #dealsResult th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+        }
+        
         @media (max-width: 300px) {
             #CreateDeal .name {
                 width: 100%;
@@ -200,6 +281,21 @@
             }
         }
     </style>
+
+    <script>
+        var Subtns = document.getElementById("btnsub");
+        if (Subtns != null) {
+            Subtns.addEventListener("click", (e) => {
+                // e.preventDefault();
+                alert('hello')
+                    // var dropdown = document.getElementById("dropdown");
+                    // dropdown.classList.add("in");
+
+                // var dropdownSignUp = document.getElementById("dropdownSignup");
+                // dropdownSignUp.classList.remove("in");
+            })
+        }
+    </script>
 </head>
 
 <body>
