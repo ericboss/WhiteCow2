@@ -20,6 +20,8 @@ numpy = "*"
 django-pandas = "*"
 six = "*"
 celery = "*"
+xmlrunner = "*"
+unittest-xml-reporting = "*"
 
 [dev-packages]
 
