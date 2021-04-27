@@ -37,7 +37,6 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'users',
     'deal',
-    'allauth',
     'django.contrib.admindocs',
     'crispy_forms',
     'django.contrib.admin',
@@ -50,10 +49,11 @@ INSTALLED_APPS = [
     'embed_video',
     'django.contrib.sites',
 
-    'allauth.account',
-    'allauth.socialaccount',
-    # Login via Google as an exemple, you can choose facebook, twitter as you like
-    'allauth.socialaccount.providers.google',
+    'allauth', # This is handle by django-allauth
+    'allauth.account', # This is handle by django-allauth
+    'allauth.socialaccount', # This is handle by django-allauth
+    'allauth.socialaccount.providers.github', # This is handle by django-allauth for Github
+    'allauth.socialaccount.providers.google', # This is handle by django-allauth for Google
 ]
 
 MIDDLEWARE = [
@@ -148,8 +148,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL='/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-LOGIN_REDIRECT_URL = 'index'
+LOGIN_REDIRECT_URL = 'deals-new'
 LOGIN_URL = 'login'
+
 
 
 # CELERY STUFF
@@ -238,3 +239,25 @@ CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'Africa/Lagos'
+
+# Managing django-allauth authentification
+AUTHENTICATION_BACKENDS = (
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
+
+SITE_ID = 1
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+# Enable email scope to receive user’s email addresses after successful social login:
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    }
+}
