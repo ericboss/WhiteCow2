@@ -28,7 +28,7 @@ def dashboad(request):
 
     """
 
-    deal = Deals.objects.all()
+    deal = Deals.objects.filter(owner =request.user)
     context = {'saved_deals':deal}
     return render(request, 'deal/Views/dashboard.html',context)
 
@@ -47,7 +47,7 @@ def add_deal(request):
         return render(request, 'deal/Views/add-deal.html', context)
     if request.method =='POST':
         name = request.POST['name']
-       
+        print("######## Deal's name is ", name)
        # import pdb
         #pdb.set_trace()
         property_status = request.POST['property_status']
@@ -116,6 +116,7 @@ def address_asset(request):
 
     }
     property_status = deal_data()[0]
+    print("########## property status is ", property_status)
     if request.method == 'GET':
         
         context['property_status'] = property_status
@@ -138,8 +139,10 @@ def address_asset(request):
 
         query= request.POST
         query_data = query.copy()
+       # print(query_data)
         query_data.pop('csrfmiddlewaretoken')
         d = {k:v.strip('[]') for k,v in query_data.items()}
+        print("Data to make API call is : ", d)
 
        
         name = deal_data()[1]
@@ -164,6 +167,7 @@ def address_asset(request):
             context['deals'] = df
             return render(request, 'deal/Views/address_asset.html', context)
         if property_status == 'Sale':
+            print("computing Deal......\n")
             response = property_search_query(url = url_for_sale, query_params=d)
             df = process_query_response(response=response)
             #deal_df = pd.read_csv('/Users/home/Documents/GitHub/WhiteCow2/deal/deal_df.csv')
@@ -176,6 +180,9 @@ def address_asset(request):
             deal_df = deal_df.where(deal_df.notnull(), None)
 
             deal_df = formatting(deal_df)
+            print("Here is the Deal \n")
+            print(deal_df)
+
             context['deals'] = deal_df
             
            
@@ -241,7 +248,7 @@ def save_deal(request):
         
        # SubscriptionDataForSale.objects.bulk_create(entries)
 
-        return redirect('index')
+        return redirect('dashboad')
 
 
 def view_deal_detail(request, pk):
@@ -275,44 +282,3 @@ def manage_subscriptions(request):
     return render(request, 'deal/Views/subscriptions.html')
 
 
-@login_required
-def edit(request, pk):
-    """
-    Edit view is to saved deal. The user is presented with a form with instance values corresponding to the data 
-    the user saved. The user can edit the form and save. The page will be redirected to the page to view saved subscriptions upon save
-    """
-    logger.debug("Edit deal {0}".format(pk))
-    deal = Deals.objects.get(pk=pk)
-    if request.method == 'POST':
-        logger.debug('Submit was  a POST.')
-
-        deal_form = DealsForm(request.POST, instance=deal)
-        if deal_form.is_valid():
-            deal_form.save()
-            logger.debug('Deal was saved.')
-            return redirect('subscriptions')
-        else:
-            logger.debug("Form was invalid. Nothing will be saved.")
-    else:
-        logger.debug('Submit is NOT a post.')
-
-        deal_form = DealsForm(instance=deal)
-    return render(request, 'deal/Views/edit.html', {'edit_form': deal_form, 'deal': deal})
-
-
-@login_required
-def delete(request, pk):
-    """
-    delete view is to saved deal. The user is presented to delete page upon request. 
-    The deal is deleted upon confirmtion. The page will be redirected to the page to view saved subscriptions upon delete
-    """
-    logger.debug("Delete deal {0}".format(pk))
-    deal = Deals.objects.get(pk=pk)
-    if request.method == 'POST':
-        logger.debug('Submit was  a POST.')
-
-        deal.delete()
-        logger.debug('Deal deleted.')
-        return redirect('subscriptions')
-
-    return render(request, 'deal/Views/delete.html', {'deal': deal})
