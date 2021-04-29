@@ -267,10 +267,10 @@ def view_deal_detail(request, pk):
 
 
 def deal_delete(request, pk):
-    deal_id = Deals.objects.get(owner=request.user).pk
-    deal_id.delete()
+    deal = Deals.objects.filter(owner=request.user, pk = pk)  
+    deal.delete()
 
-    return redirect('index')
+    return redirect('dashboad')
     
 @login_required
 def manage_subscriptions(request):

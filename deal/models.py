@@ -320,6 +320,7 @@ class SubscriptionDataForSale(models.Model):
     price_reduced_amount = models.CharField(max_length=50,blank=True, null = True )
     location = models.JSONField(blank=True, null = True)
     matterport = models.CharField(max_length=10,blank=True, null = True )
+    
     owner = models.ForeignKey(to=User, on_delete=models.CASCADE, blank=True, null=True)
     deal = models.ForeignKey(Deals, on_delete=models.SET_NULL, related_name="deal_subscription_for_sale", blank=True, null=True)
 
