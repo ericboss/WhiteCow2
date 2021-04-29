@@ -1,1 +1,1 @@
-web: gunicorn WhiteCow.wsgi
+web: gunicorn WhiteCow.wsgi --log-file -

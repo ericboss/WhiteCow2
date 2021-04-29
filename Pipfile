@@ -22,6 +22,8 @@ six = "*"
 celery = "*"
 xmlrunner = "*"
 unittest-xml-reporting = "*"
+dj-database-url = "*"
+whitenoise = "*"
 
 [dev-packages]
 

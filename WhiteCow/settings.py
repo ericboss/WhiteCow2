@@ -14,6 +14,8 @@ from pathlib import Path
 import os
 from django.contrib import messages
 import django_heroku
+import dj_database_url
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,9 +29,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '_u9j7y1ho5wuif6@0#9(7hlvw51g*$h^0e(rwlyl4gp&l5mpb$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1',  'whitecow.herokuapp.com']
 
 
 # Application definition
@@ -54,6 +56,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount', # This is handle by django-allauth
     'allauth.socialaccount.providers.github', # This is handle by django-allauth for Github
     'allauth.socialaccount.providers.google', # This is handle by django-allauth for Google
+    'whitenoise.runserver_nostatic'
 ]
 
 MIDDLEWARE = [
@@ -65,8 +68,11 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.admindocs.middleware.XViewMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware'
     
 ]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ROOT_URLCONF = 'WhiteCow.urls'
 
@@ -105,6 +111,8 @@ DATABASES = {
 }
 
 
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
