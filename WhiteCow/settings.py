@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '_u9j7y1ho5wuif6@0#9(7hlvw51g*$h^0e(rwlyl4gp&l5mpb$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1',  'whitecow.herokuapp.com']
 
