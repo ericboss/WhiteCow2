@@ -56,7 +56,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount', # This is handle by django-allauth
     'allauth.socialaccount.providers.github', # This is handle by django-allauth for Github
     'allauth.socialaccount.providers.google', # This is handle by django-allauth for Google
-    'whitenoise.runserver_nostatic'
+    'whitenoise.runserver_nostatic',
+    'django_celery_beat'
 ]
 
 MIDDLEWARE = [
@@ -170,6 +171,8 @@ CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'Africa/Lagos'
+
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

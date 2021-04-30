@@ -38,3 +38,6 @@ def debug_task(self):
     print('Request: {0!r}'.format(self.request))
 
 
+@app.task(bind=True)
+def hello_world(self):
+    print('Hello world!')

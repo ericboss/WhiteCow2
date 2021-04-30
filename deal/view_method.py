@@ -15,15 +15,15 @@ def property_search_query(url, query_params):
             "x-rapidapi-host": host,
             "x-rapidapi-key": api_key
         }
+
        
         # response
-
-        response = requests.get(url, headers=headers, params=query_params)
-        if response.ok:
-            return response
-        else:
-            logger.error(f"Error in making API request ")
-            return None
+        print('##################### Before')
+        response = requests.request("GET", url, headers=headers, params=query_params)
+        import pdb
+        pdb.set_trace()
+        return response
+        
  
 def process_query_response(response):
     if response is not None:  

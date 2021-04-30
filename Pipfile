@@ -24,6 +24,7 @@ xmlrunner = "*"
 unittest-xml-reporting = "*"
 dj-database-url = "*"
 whitenoise = "*"
+django-celery-beat = "*"
 
 [dev-packages]
 

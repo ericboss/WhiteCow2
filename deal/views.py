@@ -10,9 +10,22 @@ from datetime import datetime
 from django_pandas.io import read_frame
 from django.db import IntegrityError
 from django.contrib.auth.decorators import login_required
-import sys,six
+import sys,six,json
+from django.http import JsonResponse
+from django.core.paginator import Paginator
 
 # Create your views here.
+
+
+def search_deals(request):
+    if request.method == 'POST':
+        search_str = json.loads(request.body).get('searchText')
+        deals = Deals.objects.filter(date__icontains=search_str, owner=request.user) | Deals.objects.filter(
+            name__icontains=search_str, owner=request.user)
+        data = deals.values()
+        return JsonResponse(list(data), safe=False)
+
+    
 def index(request):
     """
     This view is to display the landing page
@@ -29,7 +42,12 @@ def dashboad(request):
     """
 
     deal = Deals.objects.filter(owner =request.user)
-    context = {'saved_deals':deal}
+    paginator = Paginator(deal, 1)
+    page_number = request.GET.get('page')
+    page_obj = Paginator.get_page(paginator, page_number)
+
+    context = {'saved_deals':deal,
+                 'page_obj': page_obj}
     return render(request, 'deal/Views/dashboard.html',context)
 
 deal_data =None
@@ -168,18 +186,18 @@ def address_asset(request):
             return render(request, 'deal/Views/address_asset.html', context)
         if property_status == 'Sale':
             print("computing Deal......\n")
-            response = property_search_query(url = url_for_sale, query_params=d)
-            df = process_query_response(response=response)
-            #deal_df = pd.read_csv('/Users/home/Documents/GitHub/WhiteCow2/deal/deal_df.csv')
+            #response = property_search_query(url = url_for_sale, query_params=d)
+            #df = process_query_response(response=response)
+            deal_df = pd.read_csv('/Users/home/Documents/GitHub/WhiteCow2/deal/deal_df.csv')
             #df = pd.read_csv('/Users/home/Documents/GitHub/WhiteCow2/sale.csv')
-            list_property_id = df['property_id'].tolist()[:3]
-            deal_dict = calculate_deal(list_property_id, df)
+            #list_property_id = df['property_id'].tolist()[:3]
+           # deal_dict = calculate_deal(list_property_id, df)
             
-            deal_df = get_deal_datafrane(deal_dict, df)
+            #deal_df = get_deal_datafrane(deal_dict, df)
            
-            deal_df = deal_df.where(deal_df.notnull(), None)
+           # deal_df = deal_df.where(deal_df.notnull(), None)
 
-            deal_df = formatting(deal_df)
+            #deal_df = formatting(deal_df)
             print("Here is the Deal \n")
             print(deal_df)
 

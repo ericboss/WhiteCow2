@@ -1,4 +1,6 @@
-{% extends 'deal/sharefiles/base.html' %} {% block content %}
+{% extends 'deal/sharefiles/base.html' %} 
+{% load static %}
+{% block content %}
 
 
 <div class="container mt-4 mb-5">
@@ -24,7 +26,15 @@
   </div>
 
 
+      <div class="col-md-8"></div>
+      <div class="float-right col-md-4 mt-4 ml-4">
 
+        <div class="form-group ">
+          <input type="text" class="form-control" id="searchField" placeholder="Search">
+        </div>
+      </div>
+    
+<div class = "container">
 <div class='table-area table-responsive col-md-10'>
   <table class="table table-hover table-striped table-sm">
     <thead>
@@ -35,7 +45,7 @@
           <th scope="col"></th>
       </tr>
     </thead>
-    <tbody>
+    <tbody >
   {% for deal in saved_deals %}
   
        <tr >
@@ -43,7 +53,7 @@
         <td>{{deal.date}}</td>
           
   <td>
-   <a type="button" class="btn btn-outline-success btn-md"  href="{% url 'deal-detail' deal.pk %}">View Deal</a>
+   <a type="button" class="btn btn-outline-success btn-md"  href="{% url 'deal-detail' deal.pk %}" >View Deal</a>
    <button type="button" class="btn btn-outline-danger btn-md" data-toggle="modal" data-target="#exampleModal">X</button>
   
    <div class="modal" tabindex="-1" role="dialog" id="exampleModal">
@@ -60,7 +70,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">CLOSE</button>
-          <a type="button" class="btn btn-primary"  href={%  url 'deal_delete' deal.pk %}>YES</a>
+          <a type="button" class="btn btn-primary"  href="{%  url 'deal_delete' deal.pk %}">YES</a>
         </div>
       </div>
     </div>
@@ -77,6 +87,58 @@
     </tbody>
   </table>
   </div>
+</div>
+
+<p class="no-results" style="display: none;">No results </p>
+
+  <div class="table-output">
+
+
+    <table class="table table-stripped table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Date Created</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+
+      <tbody  class="table-body">
+
+
+      </tbody>
+    </table>
+  </div>
+
+  
+  
+
+<div class="pagination-container float-right mr-5">
+  <div class="">
+    Showing page {{page_obj.number}} of {{ page_obj.paginator.num_pages }}
+  </div>
+  <ul class="pagination align-right float-right mr-auto">
+    {% if page_obj.has_previous %}
+    <li {% if page_obj.number == 1 %} class="page-item active" {% endif %}><a class="page-link" href="?page=1">&laquo; 1</a></li>
+    <li class="page-item"> <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+    {% endif %}
+
+    {% if page_obj.has_next %}
+    <li class="page-item"> <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+    <li class="page-item"> <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages}} &raquo;</a></li>
+    {% endif %}
+
+
+    </ul>
   
 </div>
+</div>
+
+
+<script src="{% static 'js/searchDeals.js' %}"></script>
+
+
+
+
+</script>
 {% endblock content %}
