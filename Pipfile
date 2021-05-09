@@ -25,6 +25,8 @@ unittest-xml-reporting = "*"
 dj-database-url = "*"
 whitenoise = "*"
 django-celery-beat = "*"
+django-enum-choices = "*"
+django-bootstrap-modal-forms = "*"
 
 [dev-packages]
 

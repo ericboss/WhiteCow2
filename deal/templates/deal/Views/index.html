@@ -1,10 +1,206 @@
-{% extends 'deal/sharefiles/base.html' %} 
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>WHITE COW - Home</title>
+</head>
+
+<body>
+    <div id="page-container">
+        <div class="container">
+        
+
+      
+
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="#">WHITE COW</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul  class="navbar-nav ml-auto">
+                    <li class="nav-item ">
+                      <a class="nav-link active" href="index.html">HOME <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#about">ABOUT US</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">CONTACT US</a>
+                      </li>
+                  </ul>
+                  <div id="authbox" class="auth">
+                    <div  class="signin" >
+                        <img class="Imgsignin" src="{% static 'file/images/signin.png' %}" alt="">
+                        <a id="signin" href="javascript:void(0)">SIGN IN</a>
+                    </div>
+                    <div class="signup">
+                        <img class="Imgsignin" src="{% static 'file/images/newacount.png' %}" alt="">
+                        <a id="signup" href="javascript:void(0)">SIGN UP</a> 
+                    </div>
+                    <div id="dropdown" class="AuthForm">
+                        <form class="signInform" action= "{% url 'dashboad' %}">  
+                            <div class="form-group signinControl">
+                              <input type="email" class="form-control" id="EmailField" aria-describedby="emailHelp" placeholder="Enter your email">
+                            </div>
+                            <div class="form-group signinControl">
+                              <input type="password" class="form-control" id="passwordField" placeholder="Enter your Password">
+                            </div>
+                            <div class="form-check signinControl2">
+                              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                              <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+                            </div>
+                            <button type="submit" class="btn btn-outline-info  signinControl2">Sign In</button>
+                            <a class="signinControl2" href="" >Forget Password ?</a>
+                            <div >
+                                <a  href="#" class="googleGo"><img class="icon" src="{% static 'file/images/google1.png'%}" alt="about us"> Sign In with Google</a>
+                              </div>
+                     
+                          </form>
+                    </div>
+                    <div id="dropdownSignup" class="AuthForm">
+                        <form class="signInform">  
+                            <div class="form-group signinControl">
+                                <input type="text" class="form-control" id="exampleFormControlInput1" name="fullname"  placeholder="enter your name" />
+                            </div>
+                            <div class="form-group signinControl">
+                              <input type="email" class="form-control" id="EmailField" aria-describedby="emailHelp" placeholder="Enter your email">
+                            </div>
+                            <div class="form-group signinControl">
+                              <input type="password" class="form-control" id="passwordField" placeholder="Enter your Password">
+                            </div>
+                            <div class="form-group signinControl">
+                                <input type="password" class="form-control" id="passwordField" placeholder="Confirm Password">
+                            </div>
+                            <button type="submit" class="btn btn-outline-info  signinControl2">Sign Up</button>
+                     
+                          </form>
+                    </div>
+                </div>
+    
+                </div>
+              </nav>
+    
+              <header class="header">
+                <div class="header-left">
+                    <H3><span>Welcome to the WhiteCow Project</span></H3>
+                    <p class="startparagraph">
+                        Open Sans is one of the most popular web fonts on Google Fonts. It is a humanist 
+                        sans serif typeface designed by Steve Matteson, Type Director of Ascender Corp. It ca
+                        n be used for both title and body text and very compatible with many sans serif and
+                         serif fonts.Open Sans is one of the most popular web fonts on Google Fonts. It is a
+                         humanist sans serif typeface designed by Steve Matteson, Type Director of Ascender 
+                        Corp. It can be used for both title and body text and very compatible with many sans
+                         serif and serif fonts.Open Sans is one of the most popular web fonts on Google Fonts.
+                         It is a humanist 
+                    </p>
+                    <button type="button" class="btn btn-outline-info">GET STARTED</button>
+                </div>
+                <div class="header-rigth">
+                    <div class="header-rigth2">
+                        <H4>2 Minutes Real Estate Video Tip</H4>
+                        <div class="video_holder">
+                           <video controls>
+                        <source src="https://www.youtube.com/watch?v=4l97azG4d3k" type="video/mp4">
+                    </video>
+                        </div>
+                    </div>
+                </div>
+            </header>
+    
+            <div id="about" class="about">
+                <div class="about-left">
+                    <H3 class="aboutHead" ><span>ABOUT US</span></H3>
+                        <p class="startAbout">
+                            Speech is defined as the ability
+                            to convey thoughts, ideas, or other
+                            information by means of articulating
+                            sound into meaningful words.
+                            Many animals can make sounds
+                            and some can tailor these sounds 
+                            to a given occasion
+                        </p>
+                        <a href="#" class="btn-get-started"> Learn More</a>
+                </div>
+                <div class="about-rigth">
+                    <img class="img-fluid animated" src="{% static 'file/images/about.png'%}" alt="about us">
+                </div>
+            </div>
+    
+            <div id="contact" class="contact">
+                <div class="contact-left">
+                    <img class="envelop" src= "{% static 'file/images/envelope.png'%}" alt="message">
+                    <p class="startContact">
+                        If you have question or just
+                        want to get in touch, use the
+                        form below. We look foward to
+                        hearing from you.
+                    </p>
+                </div>
+                <div class="contact-rigth">
+                    <div class="my-5">
+                        <h1 class="text-center">CONTACT US</h1>
+                    </div>
+                        <div class="formSect">
+                            <form onSubmit={formSubmit} action="">
+                                <div class="form-group mb-3">
+                                    <label htmlFor="exampleFormControlInput1" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="exampleFormControlInput1" name="fullname"  placeholder="enter your name" />
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label htmlFor="exampleFormControlInput1" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="exampleFormControlInput1" name="email"  placeholder="name@example.com" />
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label htmlFor="exampleFormControlTextarea1" class="form-label">Message</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="msg"></textarea>
+                                </div>
+                                <div class="col-12 my-2">
+                                    <button type="submit" class="btn btn-outline-info">SEND</button>
+                                </div>
+                            </form>
+                        </div>
+       
+                   
+                </div>
+            </div>
+           
+        </div>
+        <footer id="footer">
+            <div class="footerIcon">
+                <a href="Https://www.facebook.com"> <img class="icon" src="{% static 'file/images/facebook1.png'%}" alt="about us"></a>
+                <a href="#"> <img class="icon" src="{% static 'file/images/youtube.png'%}" alt="about us"></a>
+                <a href="#"> <img class="icon" src="{% static 'file/images/twitter.png'%}" alt="about us"></a>
+                <a href="#"> <img class="icon" src="{% static 'file/images/linkedin.png'%}" alt="about us"></a>
+                <a href="#"> <img class="icon" src="{% static 'file/images/instagram.png'%}" alt="about us"></a>
+               
+             
+            </div>
+            <div class="footerNav">
+                <a class="footer-link" href="index.html">HOME</a>
+                <a class="footer-link" href="#about">ABOUT US</a>
+                <a class="footer-link" href="#contact">CONTACT US</a>
+            </div>
+            <div class="footerCopy">
+                <p> &copy; 2021 White Cow. All Rights Reserved | Terms and Conditions</p>
+            </div>
+        </footer>
+    </div>
+   
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
 
 
-{% block content %} 
-{% include 'deal/components/header.html' %} 
-{% include 'deal/components/about.html' %} 
-{% include 'deal/components/contact.html' %} 
 
-
-{% endblock %}
+</html>

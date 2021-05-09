@@ -1,4 +1,6 @@
-{% extends 'deal/sharefiles/base.html' %} {% block content %}
+{% extends 'deal/sharefiles/base.html' %} 
+
+{% block content %}
 
 
  <div class="container">
@@ -28,13 +30,11 @@
 
                 <div class="card-body">
                   <p class="h6">Assets:</p>
-                      {% if property_status == 'Rent' %}
-                      {% include 'deal/forms/rent-form.html' %}
-                      {% endif %}     
+                     
                         
-                      {% if property_status == 'Sale' %}
+                      
                       {% include 'deal/forms/sale-form.html' %}
-                      {% endif %} 
+                      
                   </div>
                   <div class="submitButton">
                     <button id="btnsub"
@@ -49,7 +49,7 @@
 
         <div id="dipblayDealBlock" style="visibility:visible" class="app-table">
           <table id="dealsResult" class="table table-stripped table-hover">
-            <thead>
+            <thead id="head" >
               <tr>
                 <th>Price (USD)</th>
                 <th>Description</th>
@@ -58,7 +58,7 @@
                 <th></th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="tableBody">
               {% for deal in deals.itertuples%}
               <tr>
                 <td>{{deal.list_price}}</td>
@@ -81,19 +81,100 @@
         </div>
 
 
-        <form id="dipblayDealform" style="visibility:visible" action="{% url 'save_deal' %}" method="post">
-          {% csrf_token %}
+         
           <div class="submitButton">
                     <button
+                          id = "save"
                           type="submit"
+                          data-toggle="modal"
+                           data-target="#exampleModal"
                           class="btn btn-success">Save</button>
                   </div>
-        </form>
+        
+
+
+
+        
+  
+   <div class="modal" tabindex="-1" role="dialog" id="exampleModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Confirm Action!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form action="{% url 'save_deal' %}" method="post">
+        {% csrf_token %}
+        <div class="modal-body">
+
+          <div class="form-group">
+            <label for="">Enter Deal's Name:</label>
+            <input type="text" class="form-control form-control-sm" name="name" required/>
+        </div>
+
+
+        <div class="form-group ">
+          <label for="">Set When to receive Deals via emails:</label>
+          <div class="maindropSelect">
+
+            <div class="dropselect1">
+                <select class="form-control" id="exampleFormControlSelect1" name="time">
+                    <option name ="time" value = "">Select period.. </option>
+                    
+                    <option name ="time" value ="1 min" >One Minute</option>
+                    <option name ="time" value ="7 days" >Daily</option>
+                    <option name ="time" value ="2 days" >Weekends</option>
+                </select>
+            </div>
+        </div>
+        </div>
+
+        </div>
+      
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+          <input type="submit" class="btn btn-primary btn-primary" value="Save">
+        </div>
+
+      </form>
+      </div>
+    </div>
+  </div>
+
+
 
 
     </div>
   </div>
 
+<script >
 
+const tableHead = document.querySelector('#head');
+const save = document.querySelector('#save');
+const tableBody = document.querySelector('#tableBody');
+tableHead.style.display = "none";
+save.style.display = "none";
+
+
+
+
+const showData = (e)=>{
+   
+    if(tableBody.innerHTML.trim() === ""){
+      console.log("Empty");
+        tableHead.style.display = "none";
+    }else{
+      console.log("Something",tableBody.innerHTML );
+      tableHead.style.display = "block";
+      save.style.display = "block";
+    }
+    ;
+    
+};
+
+document.addEventListener("DOMContentLoaded", showData);
+</script>
 
 {% endblock content %}

@@ -1,19 +1,19 @@
 from django.shortcuts import render,redirect
-from .models import(Deals, PropertyStatus, Adress,AssetsForRent,Sort,PropertyType,ExpandSearchRadius,
-HomeSize, InUnitFeatures,CommunityAmmenities,Ok,SortSale, PropertyTypeSale, PropertyTypeNycOnly, NoHoaFee,
-HomeSizeMinSale, HomeSizeMaxSale,LotSize,Stories,Garage,HeatingCooling,InsideRooms,OutsideFeatures,LotViews,CommunityAmmenitiesSale,
-FeaturesInNycOnly,AssetsForSale,SubscriptionDataForSale)
+from .models import *
 from django.contrib import messages
 from .view_method import *
 import json,requests
 from datetime import datetime
+import datetime as datetime_
 from django_pandas.io import read_frame
 from django.db import IntegrityError
 from django.contrib.auth.decorators import login_required
 import sys,six,json
 from django.http import JsonResponse
 from django.core.paginator import Paginator
-
+import pandas as pd
+from .enums import *
+from django.http import JsonResponse
 # Create your views here.
 
 
@@ -35,6 +35,22 @@ def index(request):
     return render(request, 'deal/Views/index.html')
 
 # Create your views here.
+
+def view_deal(request):
+    """
+    This view is to display the landing page
+
+    """
+
+    deal = Deals.objects.filter(owner =request.user)
+    paginator = Paginator(deal, 5)
+    page_number = request.GET.get('page')
+    page_obj = Paginator.get_page(paginator, page_number)
+
+    context = {'saved_deals':deal,
+                 'page_obj': page_obj}
+    return render(request, 'deal/Views/dashboard.html',context)
+
 def dashboad(request):
     """
     This view is to display the landing page
@@ -42,13 +58,13 @@ def dashboad(request):
     """
 
     deal = Deals.objects.filter(owner =request.user)
-    paginator = Paginator(deal, 1)
+    paginator = Paginator(deal, 5)
     page_number = request.GET.get('page')
     page_obj = Paginator.get_page(paginator, page_number)
 
     context = {'saved_deals':deal,
                  'page_obj': page_obj}
-    return render(request, 'deal/Views/dashboard.html',context)
+    return render(request, 'deal/Views/dashboad.html',context)
 
 deal_data =None
 def add_deal(request):
@@ -65,6 +81,7 @@ def add_deal(request):
         return render(request, 'deal/Views/add-deal.html', context)
     if request.method =='POST':
         name = request.POST['name']
+        scheduler_time = request.POST['time']
         print("######## Deal's name is ", name)
        # import pdb
         #pdb.set_trace()
@@ -81,7 +98,7 @@ def add_deal(request):
 
         return redirect('address_assets')
 
-data_to_save = None
+
 def address_asset(request):
     sort  = Sort.objects.all()
     property_type = PropertyType.objects.all()
@@ -133,11 +150,10 @@ def address_asset(request):
         'features_in_nyc_only':features_in_nyc_only
 
     }
-    property_status = deal_data()[0]
-    print("########## property status is ", property_status)
+    
     if request.method == 'GET':
         
-        context['property_status'] = property_status
+       
         
         return render(request, 'deal/Views/address_asset.html', context)
     
@@ -145,7 +161,7 @@ def address_asset(request):
         city = request.POST['city']
         state_code = request.POST['state_code']
         location = request.POST['location']
-        context['property_status'] = property_status
+        
         
         if not city:
             messages.error(request, 'City is required')
@@ -163,78 +179,81 @@ def address_asset(request):
         print("Data to make API call is : ", d)
 
        
-        name = deal_data()[1]
-
-        
-
-        if property_status == 'Rent':
-            #response = property_search_query(url = url_for_rent, query_params=d)
-        
-            #df = process_query_response(response=response)
-            df = pd.read_csv('/Users/home/Documents/GitHub/WhiteCow2/deal/deal_df.csv')
-            df = df.where(df.notnull(), None)
-           
-            df["description"] = df["description"].apply(eval)
-            
-            df["location"] = df["location"].apply(eval)
-           
-            
-
-            #import pdb
-            #pdb.set_trace()
-            context['deals'] = df
-            return render(request, 'deal/Views/address_asset.html', context)
-        if property_status == 'Sale':
-            print("computing Deal......\n")
-            response = property_search_query(url = url_for_sale, query_params=d)
-            df = process_query_response(response=response)
+  
+    
+       
+        print("computing Deal......\n")
+        response = property_search_query(url = url_for_sale, query_params=d)
+        df = process_query_response(response=response)
             #deal_df = pd.read_csv('/Users/home/Documents/GitHub/WhiteCow2/deal/deal_df.csv')
             #df = pd.read_csv('/Users/home/Documents/GitHub/WhiteCow2/sale.csv')
-            list_property_id = df['property_id'].tolist()[:3]
-            deal_dict = calculate_deal(list_property_id, df)
+        list_property_id = df['property_id'].tolist()[:3]
+        deal_dict = calculate_deal(list_property_id, df)
             
-            deal_df = get_deal_datafrane(deal_dict, df)
+        deal_df = get_deal_datafrane(deal_dict, df)
            
-            deal_df = deal_df.where(deal_df.notnull(), None)
+        deal_df = deal_df.where(deal_df.notnull(), None)
 
-            deal_df = formatting(deal_df)
-            print("Here is the Deal \n")
-            print(deal_df)
+        deal_df = formatting(deal_df)
+        print("Here is the Deal \n")
+        print(deal_df)
 
-            context['deals'] = deal_df
+        context['deals'] = deal_df
             
            
-            property_type = d['property_type']
-            context['property_type'] = property_type
+        property_type = d['property_type']
+        context['property_type'] = property_type
 
-           
-            global data_to_save
-            def data_to_save():
-                return name,city,state_code,location, d, deal_df
+        request.session['city'] = city
+        request.session['state_code'] = state_code
+        request.session['location'] = location
+        request.session['d'] = d
+        deal= json.loads(deal_df.to_json())
+        request.session['deal_df'] = deal
 
-            context['deals'] = deal_df
-            return render(request, 'deal/Views/address_asset.html', context)
+      
+        context['deals'] = deal_df
+        return render(request, 'deal/Views/address_asset.html', context)
             
+
 
 
 
 def save_deal(request):
-    data = data_to_save()
-    name = data[0]
-    city = data[1]
-    state_code = data[2]
-    location = data[3]
-    assets = data[4]
-    deal= data[5]
+
+    
     
 
-
     if request.method == 'POST':
+     
+        name = request.POST.get('name')
+        time = request.POST.get('time')
+        city = request.session['city'] 
+        state_code = request.session['state_code']
+        location = request.session['location']
+        assets = request.session['d']
+        deal= request.session['deal_df']
+        deal = pd.DataFrame.from_dict(deal)
+
+        for i in deal.itertuples():
         
-
+            deal['last_update_date'] = datetime.fromtimestamp(i.last_update_date / 1e3) 
+            deal['list_date'] = datetime.fromtimestamp(i.list_date / 1e3) 
+        #deal = formatting(deal)
+       
+        
         Deals.objects.create(name = name,owner=request.user)
-
         de = Deals.objects.latest('id')
+        if time != "":
+            if TimeInterval(time) is TimeInterval.one_min:
+                Setup.objects.create(title=name,owner=request.user,deal=de,time_interval = TimeInterval.one_min)
+            if TimeInterval(time) is TimeInterval.every_day:
+                Setup.objects.create(title=name,owner=request.user,deal=de,time_interval = TimeInterval.every_day)
+            if TimeInterval(time) is TimeInterval.week_ends:
+                Setup.objects.create(title=name,owner=request.user,deal=de,time_interval = TimeInterval.week_ends)
+            
+
+        
         deal['owner'] = request.user
         deal['deal'] = de
 
@@ -260,6 +279,7 @@ def save_deal(request):
         for e in deal.T.to_dict().values():
 
             entries.append(SubscriptionDataForSale(**e))
+        
         SubscriptionDataForSale.objects.bulk_create(entries)
  
             
@@ -267,6 +287,38 @@ def save_deal(request):
        # SubscriptionDataForSale.objects.bulk_create(entries)
 
         return redirect('dashboad')
+
+    return render(request, 'deal/Views/address_asset.html')
+
+
+def deal_stats(request):
+    todays_date = datetime_.date.today()
+    one_month_ago = todays_date - datetime_.timedelta(days=30)
+    one_year_ago = todays_date - datetime_.timedelta(days=30*12)
+    one_day_ago = todays_date - datetime_.timedelta(days=1)
+    
+
+    deal_stats_month= SubscriptionDataForSale.objects.filter(owner=request.user,date__gte=one_month_ago).count()
+    deal_stats_year= SubscriptionDataForSale.objects.filter(owner=request.user,date__gte=one_year_ago).count()
+    deal_stats_day= SubscriptionDataForSale.objects.filter(owner=request.user,date__gte=one_day_ago).count()
+
+    deal_stats_land= SubscriptionDataForSale.objects.filter(owner=request.user,description__icontains = "land").count()
+    deal_stats_multi_family= SubscriptionDataForSale.objects.filter(owner=request.user,description__icontains = "multi_family").count()
+    deal_stats_single_family= SubscriptionDataForSale.objects.filter(owner=request.user,description__icontains = "single_family").count()
+    deal_stats_mobile= SubscriptionDataForSale.objects.filter(owner=request.user,description__icontains = "mobile").count()
+    deal_stats_farm= SubscriptionDataForSale.objects.filter(owner=request.user,description__icontains = "farm").count()
+    deal_stats_2021= SubscriptionDataForSale.objects.filter(owner=request.user,date__icontains = "2021").count()
+    finalrep = {'month': deal_stats_month,
+                'year':deal_stats_year,
+                'day': deal_stats_day,
+                 'land': deal_stats_land,
+                  'multi_family': deal_stats_multi_family,
+                   'single_family': deal_stats_single_family,
+                    'mobile': deal_stats_mobile,
+                     'farm': deal_stats_farm,
+                      "year_2021":deal_stats_2021}
+
+    return JsonResponse({'deal_category_data': finalrep}, safe=False)
 
 
 def view_deal_detail(request, pk):

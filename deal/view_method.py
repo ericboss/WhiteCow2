@@ -94,6 +94,7 @@ def formatting(df):
         df[col] = df[col].apply(json.loads)
     
     for i in df.itertuples():
+        
         df['last_update_date'] = i.last_update_date.replace('T',' ') 
         df['list_date'] = i.last_update_date.replace('T',' ')
        
@@ -109,3 +110,25 @@ def formatting(df):
 
 
     return df
+
+
+
+def get_query_params(address, assets):
+        """
+        This method is to get the user's query parameters. It will be later used to make a get request to the realestate API
+        to get data.
+        """
+        address_params = vars(address)
+
+        asset_params = vars(assets)
+
+        query_params = {}
+        query_params.update(address_params)
+        query_params.update(asset_params)
+        query_params.pop('_state')
+        query_params.pop('id')
+        #query_params = json.dumps(query_params)
+        #query_params = query_params.replace('"', "")
+        # query_params.update(compute_params)
+
+        return query_params

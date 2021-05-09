@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-import os
+import os,sys
 from django.contrib import messages
 import django_heroku
 import dj_database_url
@@ -87,6 +87,7 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.static',
                 'django.contrib.messages.context_processors.messages',
 
                
@@ -180,7 +181,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'ertagne@gmail.com'
-EMAIL_HOST_PASSWORD = 'eric2021?'
+EMAIL_HOST_PASSWORD = 'gzspklnzbzsdpgoh'
 
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
@@ -276,3 +277,8 @@ SOCIALACCOUNT_PROVIDERS = {
 }
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+if 'test' in sys.argv or 'test\_coverage' in sys.argv: #Covers regular testing and django-coverage
+
+    DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
+    DATABASES['default']['NAME'] = ':memory:'

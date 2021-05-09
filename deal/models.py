@@ -8,15 +8,24 @@ import json
 from django.contrib.auth.models import User
 import logging
 from django.utils.timezone import now
+import json
+import uuid
+
+from django.db import models
+from django.utils import timezone
+from django_enum_choices.fields import EnumChoiceField
+from django_celery_beat.models import IntervalSchedule, PeriodicTask,CrontabSchedule
+from .enums import TimeInterval, SetupStatus
 
 logger = logging.getLogger('django')
 
 # Create your models here.
 class Deals(models.Model):
+    
     name = models.CharField(max_length=30, blank=True, null=True)
     date = models.DateTimeField(default=now, blank=True, null=True)
     owner = models.ForeignKey(to=User, on_delete=models.CASCADE, blank=True, null=True)
-    property_status = models.CharField(max_length=30, blank=True, null=True)
+    
     
 
     def __str__(self):
@@ -25,6 +34,60 @@ class Deals(models.Model):
     class Meta:
         verbose_name_plural = 'Deals'
         ordering = ['-date']
+
+class Setup(models.Model):
+    class Meta:
+        verbose_name = 'Setup'
+        verbose_name_plural = 'Setups'
+    
+    owner = models.ForeignKey(to=User, on_delete=models.CASCADE, blank=True, null=True)
+    deal = models.OneToOneField(Deals, on_delete=models.CASCADE, related_name="deal_setup", blank=True, null=True)
+    title = models.CharField(max_length=70, blank=False)
+    status = EnumChoiceField(SetupStatus, default=SetupStatus.active)
+    created_at = models.DateTimeField(auto_now_add=True)
+    time_interval = EnumChoiceField(
+        TimeInterval, default=TimeInterval.every_day)
+
+    task = models.OneToOneField(
+        PeriodicTask,
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True
+    )
+    def __str__(self):
+        return self.title
+    
+
+    def delete(self, *args, **kwargs):
+        if self.task is not None:
+            self.task.delete()
+
+        return super(self.__class__, self).delete(*args, **kwargs)
+
+    def setup_task(self):
+        self.task = PeriodicTask.objects.create(
+            name=self.title,
+            task='computation_heavy_task',
+            interval=self.interval_schedule,
+            args=json.dumps([self.id]),
+            start_time=timezone.now()
+        )
+        self.save()
+
+    @property
+    def interval_schedule(self):
+        if self.time_interval == TimeInterval.one_min:
+            return CrontabSchedule.objects.get( minute='1',hour='*',day_of_week='*',day_of_month='*', month_of_year='*',)
+        if self.time_interval == TimeInterval.every_day:
+            return CrontabSchedule.objects.get( minute='0',hour='8',day_of_week='*',day_of_month='*', month_of_year='*',)
+        if self.time_interval == TimeInterval.week_ends:
+            return CrontabSchedule.objects.get( minute='0',hour='8',day_of_week='6,0',day_of_month='*', month_of_year='*',)
+
+        raise NotImplementedError(
+            '''Interval Schedule for {interval} is not added.'''.format(
+                interval=self.time_interval.value))
+
+
 
 class SchedulerTime(models.Model):
     name = models.CharField(max_length=40, blank=True, null = True)
@@ -47,8 +110,9 @@ class Adress(models.Model):
     """
     Addres Class contains attributes necessary for saving the Adress of a deal.
     """
+    
     owner = models.ForeignKey(to=User, on_delete=models.CASCADE, blank=True, null=True)
-    deal = models.ForeignKey(Deals, on_delete=models.CASCADE, related_name="deal_address", blank=True, null=True)
+    deal = models.OneToOneField(Deals, on_delete=models.CASCADE, related_name="deal_address", blank=True, null=True)
     city = models.CharField(max_length=40)
     state_code = models.CharField(max_length=10)
     location = models.CharField(max_length=10, blank=True, default='') #postal code
@@ -60,7 +124,7 @@ class Adress(models.Model):
         return "{}, {}".format(self.city, self.state_code)
 
 class AssetsForRent(models.Model):
-
+    
     deal = models.ForeignKey(Deals, on_delete=models.CASCADE, related_name="deal_assets_for_rent", blank=True, null=True)
     
     sort = models.CharField(max_length=255, blank=True, null=True)
@@ -127,9 +191,9 @@ class Ok (models.Model):
 
 
 class AssetsForSale(models.Model):
-
+    
     owner = models.ForeignKey(to=User, on_delete=models.CASCADE, blank=True, null=True) 
-    deal = models.ForeignKey(Deals, on_delete=models.CASCADE, related_name="deal_assets_for_sale", blank=True, null=True)
+    deal = models.OneToOneField(Deals, on_delete=models.CASCADE, related_name="deal_assets_for_sale", blank=True, null=True)
 
     sort = models.CharField(max_length=255, blank=True, null=True)
     price_min = models.IntegerField(blank=True, null=True)
@@ -255,6 +319,7 @@ class FeaturesInNycOnly(models.Model):
 class SubscriptionDataForRent(models.Model):
     
     deal = models.ForeignKey(Deals, on_delete=models.CASCADE, related_name="deal_subscription_for_rent", blank=True, null=True)
+    
     photos = models.JSONField(blank=True, null = True)
     branding = models.JSONField(blank=True, null = True)
     other_listings = models.JSONField(blank=True, null = True)
@@ -297,7 +362,9 @@ class SubscriptionDataForRent(models.Model):
 
 class SubscriptionDataForSale(models.Model):
     
+    
     primary_photo = models.JSONField(max_length=10485760,blank=True, null = True)
+    date = models.DateTimeField(default=now, blank=True, null=True)
     last_update_date = models.DateTimeField(blank=True, null = True )
     source = models.JSONField(max_length=10485760,blank=True, null = True)
     tags = models.CharField(max_length=10485760,blank=True, null = True )
