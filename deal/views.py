@@ -16,7 +16,7 @@ from .enums import *
 from django.http import JsonResponse
 # Create your views here.
 
-
+@login_required
 def search_deals(request):
     if request.method == 'POST':
         search_str = json.loads(request.body).get('searchText')
@@ -35,7 +35,7 @@ def index(request):
     return render(request, 'deal/Views/index.html')
 
 # Create your views here.
-
+@login_required
 def view_deal(request):
     """
     This view is to display the landing page
@@ -50,7 +50,7 @@ def view_deal(request):
     context = {'saved_deals':deal,
                  'page_obj': page_obj}
     return render(request, 'deal/Views/dashboard.html',context)
-
+@login_required
 def dashboad(request):
     """
     This view is to display the landing page
