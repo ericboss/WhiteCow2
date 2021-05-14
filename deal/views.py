@@ -151,6 +151,10 @@ def address_asset(request):
 
     }
     
+<<<<<<< Updated upstream
+=======
+    property_status = deal_data()[0]
+>>>>>>> Stashed changes
     if request.method == 'GET':
         
        
