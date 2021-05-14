@@ -59,6 +59,19 @@ def computation_heavy_task(self):
             deal_links = ["https://www.realtor.com/realestateandhomes-detail/"+deal.permalink for deal in deal_df.itertuples()]
             
             email(deal_list=deal_links, email_list=user_email)
+
+
+            deal=deal_df 
+            deal['owner'] = setup.owner
+            deal['deal'] = de
+
+            entries = []       
+    
+            for e in deal.T.to_dict().values():
+
+                entries.append(SubscriptionDataForSale(**e))
+            
+            SubscriptionDataForSale.objects.bulk_create(entries)
         
    
     
