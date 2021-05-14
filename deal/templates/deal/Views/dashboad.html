@@ -41,7 +41,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item ">
-                            <a class="nav-link active" href="index.html">HOME <span class="sr-only">(current)</span></a>
+                            <a class="nav-link active" href="{% url 'index' %}">HOME <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#about">ABOUT US</a>
@@ -57,8 +57,8 @@
                         <div class="dropdowprofile"> <i class="fas fa-caret-down"></i></div>
                         <div id="userdropdox" class="useraction">
                             <div class="usersect"><a href="">Profile</a></div>
-                            <div class="usersect"><a href="dashboad.html">dashboard</a></div>
-                            <div class="usersect"><a href="">Subscriptions</a></div>
+                            <div class="usersect"><a href="#">dashboard</a></div>
+                            <div class="usersect"><a href="{% url 'subscriptions' %}">Subscriptions</a></div>
                             <div class="usersect"><a href="">Sign Out</a></div>
                         </div>
 
@@ -96,22 +96,11 @@
                                 </li>
 
                                 <li class="has-submenu">
-                                    <a href="#"> <i class="mdi mdi-bell-ring"></i>Subscriptions
+                                    <a href="{% url 'subscriptions' %}"> <i class="mdi mdi-bell-ring"></i>Subscriptions
                                     </a>
                                 </li>
 
-                                <li class="has-submenu">
-                                    <a href="#"> <i class="mdi mdi-message-outline"></i>Mail
-                                        <div class="arrow-down"></div>
-                                    </a>
-                                    <ul class="submenu">
-                                        <li><a href="layouts-vertical.html">Configuration</a></li>
-                                        <li>
-                                            <a href="layouts-menubar-dark.html">Scheduler</a>
-                                        </li>
-
-                                    </ul>
-                                </li>
+                               
 
                             </ul>
                             <!-- End navigation menu -->

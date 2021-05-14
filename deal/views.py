@@ -262,8 +262,8 @@ def save_deal(request):
         assets.pop('location')
         assets['owner'] = request.user
         assets['deal'] =  de
-        deal['owner'] = request.user
-        deal['deal'] = de
+        
+       
         for k  in assets :
             if assets[k] == '':
                 assets[k] = None
@@ -337,8 +337,19 @@ def view_deal_detail(request, pk):
 
 
 def deal_delete(request, pk):
+    subscription = SubscriptionDataForSale.objects.filter(owner=request.user, deal_id = pk)
+    setup = Setup.objects.filter(owner=request.user, deal_id = pk)
+    asset = AssetsForSale.objects.filter(owner=request.user, deal_id = pk)
+    address = Adress.objects.filter(owner=request.user, deal_id = pk)
     deal = Deals.objects.filter(owner=request.user, pk = pk)  
+
+    
+    subscription.delete()
+    setup.delete()
+    address.delete()
+    asset.delete()
     deal.delete()
+    
 
     return redirect('dashboad')
     
@@ -347,8 +358,10 @@ def manage_subscriptions(request):
     """
     Thie view is to display the subcriptions(saved deals) a user has made
     """
-
-    #deal = Deals.objects.all()
-    return render(request, 'deal/Views/subscriptions.html')
+    
+    deal = Deals.objects.filter(owner = request.user)
+    setup = Setup.objects.filter(owner = request.user)
+    setupOne = Setup.objects.filter(owner = request.user).first()
+    return render(request, 'deal/Views/subscriptions.html',{'deals':setup,'setup':setupOne})
 
 
