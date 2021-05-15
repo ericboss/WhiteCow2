@@ -365,3 +365,55 @@ def manage_subscriptions(request):
     return render(request, 'deal/Views/subscriptions.html',{'deals':setup,'setup':setupOne})
 
 
+def edit_subscriptions(request, id):
+
+    setup = Setup.objects.get(pk = id)
+    deals = Deals.objects.get(pk=setup.deal_id)
+
+    if request.method =='POST':
+        data = request.POST
+        if 'toggle' in data:
+            toggle = request.POST['toggle']
+            name = request.POST['name']
+            time = request.POST['time']
+
+
+            if time != "":
+                if TimeInterval(time) is TimeInterval.one_min:
+                    Setup.time_interval = TimeInterval.one_min
+                if TimeInterval(time) is TimeInterval.every_day:
+                    Setup.time_interval = TimeInterval.every_day
+                if TimeInterval(time) is TimeInterval.week_ends:
+                    Setup.time_interval = TimeInterval.week_ends
+                
+            setup.owner= request.user
+            deals.name = name
+            setup.title = name
+
+            setup.save()
+            deals.save()
+
+        else:
+            name = request.POST['name']
+            time = request.POST['time']
+            
+
+            if time != "":
+                if TimeInterval(time) is TimeInterval.one_min:
+                    Setup.time_interval = TimeInterval.one_min
+                if TimeInterval(time) is TimeInterval.every_day:
+                    Setup.time_interval = TimeInterval.every_day
+                if TimeInterval(time) is TimeInterval.week_ends:
+                    Setup.time_interval = TimeInterval.week_ends
+                
+            setup.owner= request.user
+            deals.name = name
+            setup.title = name
+            setup.status = SetupStatus.disabled
+
+            setup.save()
+            deals.save()
+
+            return redirect('subscriptions')
+
+    return render(request, 'deal/Views/subscriptions.html')

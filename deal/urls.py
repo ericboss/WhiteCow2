@@ -9,6 +9,8 @@ urlpatterns = [
 
     path('deals/view/', views.view_deal, name= 'view'),
     path('deals/subscriptions/', views.manage_subscriptions, name = 'subscriptions'),
+    path('deals/edit/subscription/<int:id>', views.edit_subscriptions, name = 'edit_subscription'),
+
     path('add-deal/', views.add_deal, name = 'add-deal'),
     path('add-deal/address_assets/', views.address_asset, name = 'address_assets'),
     path('save/', views.save_deal, name = 'save_deal'),
