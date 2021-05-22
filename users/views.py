@@ -26,7 +26,7 @@ def register(request):
 
         if not User.objects.filter(username=name):
             if not User.objects.filter(email=email):
-                user= User.objects.create_user(username=name, password=password)
+                user= User.objects.create_user(username=name, email= email,password=password)
                 user.set_password(password)
                 user.save()
                 messages.success(request, "Account Successfully Created. You can Now Log In")
