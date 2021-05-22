@@ -28,7 +28,6 @@
                 </div>
 
                 <div class="card-body">
-<<<<<<< Updated upstream
                   <p class="h6">Assets:</p>
                      
                         
@@ -71,40 +70,6 @@
                     href="https://www.realtor.com/realestateandhomes-detail/{{deal.permalink}}"
                     class="btn btn-secondary btn-sm"
                     >View Details</a
-=======
-                    <p class="h6">Assets:</p>
-                    {% if property_status == 'Rent' %} {% include 'deal/forms/rent-form.html' %} {% endif %} {% if property_status == 'Sale' %} {% include 'deal/forms/sale-form.html' %} {% endif %}
-                </div>
-                <div class="submitButton">
-                    <button id="btnSub" type="submit" class="btn btn-primary btn-primary-sm">Search Deals</button>
-                </div>
-
-            </form>
-
-        </div>
-
-        <div id="dipblayDealBlock"  class="app-table">
-            <table id="dealsResult" class="table table-stripped table-hover">
-                <thead>
-                    <tr>
-                        <th>Price (USD)</th>
-                        <th>Description</th>
-                        <th>Location</th>
-
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for deal in deals.itertuples%}
-                    <tr>
-                        <td>{{deal.list_price}}</td>
-                        <td>{{deal.description.type}}, lot:{{deal.description.lot_sqft}} sqft beds:{{deal.description.beds}} Garage:{{deal.description.garage}}, {{deal.description.sqft}} sqft</td>
-                        <td>{{deal.location.address.postal_code}}, {{deal.location.address.state}} {{deal.location.address.state_code}}</td>
-
-
-                        <td>
-                            <a href="https://www.realtor.com/realestateandhomes-detail/{{deal.permalink}}" class="btn btn-secondary btn-sm">View Details</a
->>>>>>> Stashed changes
                   >
                 </td>
               </tr>
@@ -115,12 +80,7 @@
         </div>
 
 
-<<<<<<< Updated upstream
          
-=======
-        <form id="dipblayDealform" action="{% url 'save_deal' %}" method="post">
-          {% csrf_token %}
->>>>>>> Stashed changes
           <div class="submitButton">
                     <button
                           id = "save"
