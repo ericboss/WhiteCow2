@@ -28,6 +28,7 @@ django-celery-beat = "*"
 django-enum-choices = "*"
 django-bootstrap-modal-forms = "*"
 redis = "*"
+honcho = "*"
 
 [dev-packages]
 
