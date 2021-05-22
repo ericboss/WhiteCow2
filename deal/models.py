@@ -48,7 +48,7 @@ class Setup(models.Model):
     time_interval = EnumChoiceField(
         TimeInterval, default=TimeInterval.every_day)
 
-    task = models.OneToOneField(
+    task = models.ForeignKey(
         PeriodicTask,
         on_delete=models.CASCADE,
         null=True,
