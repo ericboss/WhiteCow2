@@ -13,12 +13,12 @@ from django_celery_beat.models import IntervalSchedule, PeriodicTask,CrontabSche
 def computation_heavy_task(self):
     users = User.objects.all()
     deals = Deals.objects.all()
-    deal_ids = [deal.pk for deal in deal_ids]
+    deal_ids = [deal.pk for deal in deals]
     user_emails = [user.email for user in users]
 
-    periodic_task_name = PeriodicTask.objects.get(
+    periodic_task_name = PeriodicTask.objects.filter(
         task=self.name  # notice PeriodicTask.name and self.name are different things
-    ).name
+    ).first().name
 
 
     setups_all = Setup.objects.all()
@@ -29,7 +29,8 @@ def computation_heavy_task(self):
     
     # setup_deal_ids = [(setup.deal_id, setup.owner) for setup in setups]
     #setup[0].status.value=='Active'
-
+    print("###########################", periodic_task_name)
+    print("########################### for setup:", setups[0].time_interval.value)
     for setup in setups:
         if periodic_task_name == setup.time_interval.value:
             user_email = [setup.owner.email]
