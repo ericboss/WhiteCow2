@@ -61,18 +61,7 @@ def computation_heavy_task(self):
             email(deal_list=deal_links, email_list=user_email)
 
 
-            deal=deal_df 
-            deal['owner'] = setup.owner
-            deal['deal'] = de
-
-            entries = []       
-    
-            for e in deal.T.to_dict().values():
-
-                entries.append(SubscriptionDataForSale(**e))
             
-            SubscriptionDataForSale.objects.bulk_create(entries)
-        
    
     
     
