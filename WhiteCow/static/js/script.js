@@ -86,3 +86,17 @@ if (searchcontrol != null) {
         }
     })
 }
+
+// // Adding Click event on The searchDeal Button
+var searchDealBtn = document.querySelector(".submitButton #btnSub");
+var displayblock = document.getElementById("dipblayDealBlock");
+var displayform = document.getElementById("dipblayDealBlock");
+
+if (searchDealBtn != null) {
+
+    searchDealBtn.addEventListener("click", (e) => {
+
+        // console.log(searchDealBtn)
+
+    })
+}
