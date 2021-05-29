@@ -1048,6 +1048,11 @@ body[data-layout=horizontal] .page-title-box .page-title {
     z-index: 1001;
     padding: 0 12px;
     -webkit-box-shadow: 0 0 35px 0 rgba(154, 161, 171, .15);
+    box-shadow: 0 0 35px 0 rgba(154, 161, 171, .15);
+}
+
+.shadow {
+    -webkit-box-shadow: 0 0 35px 0 rgba(154, 161, 171, .15);
     box-shadow: 0 0 35px 0 rgba(154, 161, 171, .15)
 }
 
@@ -1370,7 +1375,7 @@ body[data-layout=horizontal] .page-title-box .page-title {
         float: left
     }
     #navigation {
-        position: absolute;
+        position: relative;
         top: 70px;
         left: 0;
         width: 100%;
@@ -2452,7 +2457,8 @@ body[data-layout=horizontal][data-layout-size=boxed] .container-fluid {
     .right-bar,
     body {
         padding: 0;
-        margin: 0
+        margin: 0;
+        background: #137eff;
     }
 }
 
@@ -2522,7 +2528,7 @@ body[data-layout=horizontal][data-layout-size=boxed] .container-fluid {
 .custom-accordion .card {
     -webkit-box-shadow: none;
     box-shadow: none;
-    border: 1px solid #dee2e6!important
+    border: 1px solid #dee2e6!important;
 }
 
 .button-list .btn {

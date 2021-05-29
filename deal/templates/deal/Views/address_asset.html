@@ -1,6 +1,4 @@
-{% extends 'deal/sharefiles/base.html' %} 
-
-{% block content %}
+{% extends 'deal/sharefiles/base.html' %} {% block content %}
 
 <div class="container">
     <div class="col-12">
@@ -27,49 +25,53 @@
                     </div>
                 </div>
 
-                <div class="card-body">
-                  <p class="h6">Assets:</p>
-                     
-                        
-                      
-                      {% include 'deal/forms/sale-form.html' %}
-                      
-                  </div>
-                  <div class="submitButton">
-                    <button id="btnsub"
-                          type="submit"
-                          class="btn btn-primary btn-primary-sm"
-                        >Search Deals</button>
-                  </div>
-                  
-              </form>
-          
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <a class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Show more options
+                            </a>
+                        </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
+                            <p class="h6">Assets:</p>
+                            {% include 'deal/forms/sale-form.html' %}
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="submitButton">
+                    <button id="btnsub" type="submit" class="btn btn-primary btn-primary-sm">Search Deals</button>
+                </div>
+
+            </form>
+
         </div>
 
         <div id="dipblayDealBlock" style="visibility:visible" class="app-table">
-          <table id="dealsResult" class="table table-stripped table-hover">
-            <thead id="head" >
-              <tr>
-                <th>Price (USD)</th>
-                <th>Description</th>
-                <th>Location</th>
-              
-                <th></th>
-              </tr>
-            </thead>
-            <tbody id="tableBody">
-              {% for deal in deals.itertuples%}
-              <tr>
-                <td>{{deal.list_price}}</td>
-                <td>{{deal.description.type}},  lot:{{deal.description.lot_sqft}} sqft beds:{{deal.description.beds}} Garage:{{deal.description.garage}}, {{deal.description.sqft}} sqft</td>
-                <td>{{deal.location.address.postal_code}}, {{deal.location.address.state}} {{deal.location.address.state_code}}</td>
-                
-        
-                <td>
-                  <a
-                    href="https://www.realtor.com/realestateandhomes-detail/{{deal.permalink}}"
-                    class="btn btn-secondary btn-sm"
-                    >View Details</a
+            <table id="dealsResult" class="table table-stripped table-hover">
+                <thead id="head">
+                    <tr>
+                        <th>Price (USD)</th>
+                        <th>Description</th>
+                        <th>Location</th>
+
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    {% for deal in deals.itertuples%}
+                    <tr>
+                        <td>{{deal.list_price}}</td>
+                        <td>{{deal.description.type}}, lot:{{deal.description.lot_sqft}} sqft beds:{{deal.description.beds}} Garage:{{deal.description.garage}}, {{deal.description.sqft}} sqft</td>
+                        <td>{{deal.location.address.postal_code}}, {{deal.location.address.state}} {{deal.location.address.state_code}}</td>
+
+
+                        <td>
+                            <a href="https://www.realtor.com/realestateandhomes-detail/{{deal.permalink}}" class="btn btn-secondary btn-sm">View Details</a
                   >
                 </td>
               </tr>

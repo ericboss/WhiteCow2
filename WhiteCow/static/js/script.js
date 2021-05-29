@@ -9,6 +9,9 @@ for (var i = 0; i < btns.length; i++) {
 }
 
 // // Adding Click event on The signIn Button
+
+/*
+
 var signin = document.getElementById("signin");
 if (signin != null) {
     signin.addEventListener("click", (e) => {
@@ -25,6 +28,8 @@ if (signin != null) {
     })
 
 }
+
+
 
 // // Adding Click event on The signUp Button
 var signup = document.getElementById("signup");
@@ -43,6 +48,11 @@ if (signup != null) {
         dropdown.classList.remove("in");
     })
 }
+
+*/
+
+
+
 
 // Adding mouseleave event on The Authentication Box
 var Authbox = document.getElementById("authbox");

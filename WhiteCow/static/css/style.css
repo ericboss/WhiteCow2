@@ -542,6 +542,31 @@ video {
     }
 }
 
+.main-content {
+    position: relative;
+    padding: 30px 5px 0 5px;
+}
+
+.content-header {
+    margin-bottom: 5%;
+}
+
+.headerNavContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex-basis: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.headerNavContainer .headerNav {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 96%;
+    align-items: center;
+}
+
 @media (max-width: 500px) {
     .container {
         display: flex;
