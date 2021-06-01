@@ -96,7 +96,7 @@ input:checked + .slider:before {
                    
                     <div class="modal-body mx-3">
                      <form action="{% url 'edit_subscription'  de.id %}"method="post">
-                    
+                         {% csrf_token %}
                       <div class="md-form mb-5">
                         <label data-error="wrong" data-success="right" for="defaultForm-email" >Name</label>
                         <input type="text" id="defaultForm-email" class="form-control validate" value="{{de.title}}" name = "name">
