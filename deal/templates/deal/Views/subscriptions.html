@@ -79,11 +79,11 @@ input:checked + .slider:before {
 
               
       
-              <div><a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#{{de.id}}">Edit</a>
+              <div><a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modal{{de.id}}"><h1 style="font-size:20px">Edit</h1></a>
               
               
               
-              <div class="modal fade" id="{{de.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+              <div class="modal fade" id="modal{{de.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
@@ -96,7 +96,7 @@ input:checked + .slider:before {
                    
                     <div class="modal-body mx-3">
                      <form action="{% url 'edit_subscription'  de.id %}"method="post">
-                    {% csrf_token %}
+                    
                       <div class="md-form mb-5">
                         <label data-error="wrong" data-success="right" for="defaultForm-email" >Name</label>
                         <input type="text" id="defaultForm-email" class="form-control validate" value="{{de.title}}" name = "name">
@@ -117,7 +117,27 @@ input:checked + .slider:before {
                             
                           </label>
 
-                          {% else%}
+                          <div class="maindropSelect ">
+
+                            <div class="dropselect1">
+                                <select class="form-control" id="defaultForm-pass{{de.id}}" name="time" value="{{de.title}}">
+                                   
+                                    
+                                    <option name ="time" value ="1 min" >1 Min</option>
+                                    <option name ="time" value ="7 days" >Daily</option>
+                                    <option name ="time" value ="2 days" >Weekends</option>
+                                </select>
+                            </div>
+                        </div>
+                        {% endif %}
+
+
+
+
+
+
+
+                          {% if de.status.value == "Disabled"%}
 
                           <p id = "status{{de.id}}" >OFF</p>
                           
@@ -129,27 +149,29 @@ input:checked + .slider:before {
                             
                           </label>
 
+                          <div id = "timeSelect" class="maindropSelect " >
+
+                            <div class="dropselect1">
+                                <select class="form-control" id="defaultForm-pass{{de.id}}" name="time" value="{{de.title}}" style="display: none;">
+                                   
+                                    
+                                    <option name ="time" value ="1 min" >1 Min</option>
+                                    <option name ="time" value ="7 days" >Daily</option>
+                                    <option name ="time" value ="2 days" >Weekends</option>
+                                </select>
+                            </div>
+                        </div>
+
                           {% endif %}
 
                         
 
-                        <div class="maindropSelect ">
-
-                          <div class="dropselect1">
-                              <select class="form-control" id="defaultForm-pass{{de.id}}" name="time" value="{{de.title}}">
-                                 
-                                  
-                                  <option name ="time" value ="1 min" >1 Min</option>
-                                  <option name ="time" value ="7 days" >Daily</option>
-                                  <option name ="time" value ="2 days" >Weekends</option>
-                              </select>
-                          </div>
-                      </div>
+                        
                       </div>
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                        <input type="submit" class="btn btn-primary"  href="" value="Save">
+                        <input id = "Save{{de.id}}" type="submit" class="btn btn-primary"  href="" value="Save">
                       </div>
                     </form>
                     </div>
@@ -176,6 +198,8 @@ input:checked + .slider:before {
     const toggle{{de.id}} = document.querySelector('#toggle{{de.id}}');
     const text{{de.id}} = document.querySelector('#defaultForm-pass{{de.id}}');
     const status{{de.id}} = document.querySelector('#status{{de.id}}');
+    const Save{{de.id}} = document.querySelector('#Save{{de.id}}');
+    const modal{{de.id}} = document.querySelector('#modal{{de.id}}');
   
     toggle{{de.id}}.addEventListener("click", (e) =>{
   
@@ -188,6 +212,11 @@ input:checked + .slider:before {
     status{{de.id}}.innerHTML = 'OFF';
   }
     });
+
+    Save{{de.id}}.addEventListener("click", (e) =>{
+     modal{{de.id}}.style.display = "hide";
+
+      });
   </script>
   
 

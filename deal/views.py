@@ -16,6 +16,7 @@ from .enums import *
 from django.http import JsonResponse
 # Create your views here.
 
+
 @login_required
 def search_deals(request):
     if request.method == 'POST':
@@ -370,41 +371,44 @@ def edit_subscriptions(request, id):
     setup = Setup.objects.get(pk = id)
     deals = Deals.objects.get(pk=setup.deal_id)
 
-    if request.method =='POST':
-        data = request.POST
-        if 'toggle' in data:
-            toggle = request.POST['toggle']
-            name = request.POST['name']
-            time = request.POST['time']
+    #if request.method =='POST':
+    data = request.POST
+    if 'toggle' in data:
+        toggle = request.POST['toggle']
+        name = request.POST['name']
+        time = request.POST['time']
+            #import pdb
+           # pdb.set_trace()
 
-
-            if time != "":
-                if TimeInterval(time) is TimeInterval.one_min:
-                    Setup.time_interval = TimeInterval.one_min
-                if TimeInterval(time) is TimeInterval.every_day:
-                    Setup.time_interval = TimeInterval.every_day
-                if TimeInterval(time) is TimeInterval.week_ends:
-                    Setup.time_interval = TimeInterval.week_ends
+        if time != "":
+            if TimeInterval(time) is TimeInterval.one_min:
+                    
+                setup.time_interval = TimeInterval.one_min
+            if TimeInterval(time) is TimeInterval.every_day:
+                setup.time_interval = TimeInterval.every_day
+            if TimeInterval(time) is TimeInterval.week_ends:
+                setup.time_interval = TimeInterval.week_ends
                 
             setup.owner= request.user
             deals.name = name
             setup.title = name
+            setup.status = SetupStatus.active
 
             setup.save()
             deals.save()
 
-        else:
-            name = request.POST['name']
-            time = request.POST['time']
+    else:
+        name = request.POST['name']
+        time = request.POST['time']
             
 
-            if time != "":
-                if TimeInterval(time) is TimeInterval.one_min:
-                    Setup.time_interval = TimeInterval.one_min
-                if TimeInterval(time) is TimeInterval.every_day:
-                    Setup.time_interval = TimeInterval.every_day
-                if TimeInterval(time) is TimeInterval.week_ends:
-                    Setup.time_interval = TimeInterval.week_ends
+        if time != "":
+            if TimeInterval(time) is TimeInterval.one_min:
+                setup.time_interval = TimeInterval.one_min
+            if TimeInterval(time) is TimeInterval.every_day:
+                setup.time_interval = TimeInterval.every_day
+            if TimeInterval(time) is TimeInterval.week_ends:
+                setup.time_interval = TimeInterval.week_ends
                 
             setup.owner= request.user
             deals.name = name
@@ -413,7 +417,10 @@ def edit_subscriptions(request, id):
 
             setup.save()
             deals.save()
+            
 
-            return redirect('subscriptions')
+                #return JsonResponse(list(data), safe=False)
 
-    return render(request, 'deal/Views/subscriptions.html')
+    return redirect('subscriptions')
+
+    #return render(request, 'deal/Views/subscriptions.html')
