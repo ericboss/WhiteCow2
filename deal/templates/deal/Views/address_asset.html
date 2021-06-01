@@ -54,18 +54,12 @@
         <div id="dipblayDealBlock" style="visibility:visible" class="app-table">
             <table id="dealsResult" class="table table-stripped table-hover">
                 <thead id="head">
-                    <tr>
-                        <th>Price (USD)</th>
-                        <th>Description</th>
-                        <th>Location</th>
-
-                        <th></th>
-                    </tr>
+                    
                 </thead>
                 <tbody id="tableBody">
                     {% for deal in deals.itertuples%}
                     <tr>
-                        <td>{{deal.list_price}}</td>
+                        <td>${{deal.list_price}}</td>
                         <td>{{deal.description.type}}, lot:{{deal.description.lot_sqft}} sqft beds:{{deal.description.beds}} Garage:{{deal.description.garage}}, {{deal.description.sqft}} sqft</td>
                         <td>{{deal.location.address.postal_code}}, {{deal.location.address.state}} {{deal.location.address.state_code}}</td>
 
