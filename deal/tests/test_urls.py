@@ -1,7 +1,7 @@
 from django.test import SimpleTestCase
 from django.urls import reverse, resolve
-from deal.views import index,add_deal,address_asset,save_deal,view_deal_detail, deal_delete
-
+from deal.views import index,view_deal,dashboad,add_deal,address_asset, save_deal
+import xmlrunner, unittest
 
 class TestUrls(SimpleTestCase):
 
@@ -22,14 +22,12 @@ class TestUrls(SimpleTestCase):
         url = reverse('save_deal')
         self.assertEqual(resolve(url).func, save_deal)
     
-    def test_view_deal_detail_is_resolved(self):
-        url = reverse('deal-detail', args=[1])
-        self.assertEqual(resolve(url).func, view_deal_detail)
+  
     
-    def test_delete_deal_is_resolved(self):
-        url = reverse('deal_delete', args=[1])
-        self.assertEqual(resolve(url).func, deal_delete)
-    
-    
+if __name__ == '__main__':
 
+    unittest.main(testRunner=xmlrunner.XMLTestRunner(),failfast=False,buffer=False,catchbreak=False)
+ 
+
+    
     

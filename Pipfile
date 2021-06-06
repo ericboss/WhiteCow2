@@ -20,8 +20,6 @@ numpy = "*"
 django-pandas = "*"
 six = "*"
 celery = "*"
-xmlrunner = "*"
-unittest-xml-reporting = "*"
 dj-database-url = "*"
 whitenoise = "*"
 django-celery-beat = "*"
@@ -29,6 +27,8 @@ django-enum-choices = "*"
 django-bootstrap-modal-forms = "*"
 redis = "*"
 honcho = "*"
+unittest-xml-reporting = "*"
+junit2html = "*"
 
 [dev-packages]
 

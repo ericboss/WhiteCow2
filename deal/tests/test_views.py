@@ -3,7 +3,7 @@ from django.urls import reverse
 from deal.models import Deals, Adress,AssetsForSale,PropertyStatus
 import json
 from django.contrib.auth.models import User
-
+import xmlrunner, unittest
 
 class TestViews(TestCase):
     def setUp(self):
@@ -17,7 +17,7 @@ class TestViews(TestCase):
         self.asset1 = AssetsForSale.objects.create()
         
         self.user = User.objects.create_user(username='testuser', email='test@company.com', password='12345')
-        self.deal1 = Deals.objects.create(owner=self.user, name='deal1', property_status='Sale')
+        self.deal1 = Deals.objects.create(owner=self.user, name='deal1')
         
         self.pk = self.deal1.pk
 
@@ -29,7 +29,7 @@ class TestViews(TestCase):
 
     def test_index_GET(self):
 
-        
+        login = self.client.login(username='testuser', password='12345')
         response = self.client.get(self.index_url)
 
         self.assertEquals(response.status_code, 200)
@@ -45,21 +45,7 @@ class TestViews(TestCase):
         self.assertTemplateUsed(response, 'deal/Views/add-deal.html')
 
         
-    def test_add_deal_POST(self):
-        login = self.client.login(username='testuser', password='12345')
-
-        property_status = "Sale"
-        context = {
-        'property_status':property_status,
-        'name':'deal'
-        
-        }
-        
-        response = self.client.post(self.add_deal_url, context)
-
-        self.assertEquals(response.status_code, 302)
-        #self.assertEquals(self.deal1.name, 'deal1')
-
+    
 
 
     def test_address_assets_GET(self):
@@ -91,7 +77,7 @@ class TestViews(TestCase):
     def test_save_deal_GET(self):
         login = self.client.login(username='testuser', password='12345')
 
-        deal2 = Deals(owner=self.user, name="deal2", property_status="Sale")
+        deal2 = Deals(owner=self.user, name="deal2")
         deal2.save()
         deal_get = Deals.objects.get(pk=2)
 
@@ -108,6 +94,9 @@ class TestViews(TestCase):
     
 
     
+if __name__ == '__main__':
+
+    unittest.main(testRunner=xmlrunner.XMLTestRunner(),failfast=False,buffer=False,catchbreak=False)
  
 
     
