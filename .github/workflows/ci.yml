@@ -9,7 +9,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: WhiteCow Unit test
       run: |
-        pip3 install --user pipenv
+        sudo -H pip install -U pipenv
        
         pipenv install --user
         python3 manage.py test
