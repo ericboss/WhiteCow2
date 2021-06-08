@@ -15,5 +15,6 @@ jobs:
         pip3 install --user unittest-xml-reporting
         pip3 install --user junit2html
         pip3 install --user coverage
+        pip3 install --user celery
         python3 manage.py test
 
