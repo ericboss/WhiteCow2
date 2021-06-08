@@ -3,17 +3,17 @@ on: push
 
 
 jobs:
-    test_project:
-                runs-on: ubuntu-latest
-                steps:
-                - uses: actions/checkout@v2
-                - name: WhiteCow Unit test
-                run: |
-                  pip3 install --user django
-                  pip3 install --user selenium
-                  pip3 install --user pandas
-                  pip3 install --user unittest-xml-reporting
-                  pip3 install --user junit2html
-                  pip3 install --user coverage
-                  python3 manage.py test
+  test_project:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: WhiteCow Unit test
+      run: |
+        pip3 install --user django
+        pip3 install --user selenium
+        pip3 install --user pandas
+        pip3 install --user unittest-xml-reporting
+        pip3 install --user junit2html
+        pip3 install --user coverage
+        python3 manage.py test
 
