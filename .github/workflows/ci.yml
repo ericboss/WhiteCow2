@@ -10,7 +10,7 @@ jobs:
     - name: WhiteCow Unit test
       run: |
         pip3 install --user pipenv
-        pipenv shell
+       
         pipenv install
         python3 manage.py test
 
