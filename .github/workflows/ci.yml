@@ -6,15 +6,12 @@ jobs:
   test_project:
     runs-on: macos-latest
     steps:
-    - name: Install pipenv
-        run: |
-          python -m pip install --upgrade pipenv wheel
-
     - uses: actions/checkout@v2
     - name: WhiteCow Unit test
       run: |
-        
+        python3 -m pip install --upgrade pipenv wheel
+       
         pipenv shell
-        pipenv install 
+        pipenv install
         python3 manage.py test
 
