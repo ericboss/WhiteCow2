@@ -9,12 +9,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: WhiteCow Unit test
       run: |
-        pip3 install --user django
-        pip3 install --user selenium
-        pip3 install --user pandas
-        pip3 install --user unittest-xml-reporting
-        pip3 install --user junit2html
-        pip3 install --user coverage
-        pip3 install --user celery
+        pip3 install --user pipenv
+        pipenv shell
+        pipenv install
         python3 manage.py test
 
