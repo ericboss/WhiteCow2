@@ -11,6 +11,6 @@ jobs:
       run: |
         pip3 install --user pipenv
        
-        pipenv install
+        pipenv install --user
         python3 manage.py test
 
