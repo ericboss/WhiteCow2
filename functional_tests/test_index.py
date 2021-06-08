@@ -5,7 +5,7 @@ from django.urls import reverse
 import time
 from django.test import TestCase, Client
 from django.contrib.auth.models import User
-import json
+
 
 
 class TestIndexPage(StaticLiveServerTestCase):
