@@ -15,7 +15,7 @@
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'dashboad' %}">DEAL</a>
+          <a class="nav-link" name="dashboard" href="{% url 'dashboad' %}">DEAL</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#about">ABOUT US</a>
@@ -70,14 +70,14 @@
                                         {% csrf_token %}
                                         <div class="form-group">
                                             <label for="exampleDropdownFormEmail2">User Name</label>
-                                            <input name="name" type="text" class="form-control" id="exampleDropdownFormEmail2" placeholder="Enter username" required>
+                                            <input id = "username-signin"name="name" type="text" class="form-control" id="exampleDropdownFormEmail2" placeholder="Enter username" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleDropdownFormPassword2">Password</label>
-                                            <input name="password" type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password" required>
+                                            <input id = "password-signin" name="password" type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password" required>
                                         </div>
                                         <div class="row form-group mt-4">
-                                            <div class=" col-12"><button class="btn btn-outline-info" style="width: 100%;" type="submit"> Login </button></div>
+                                            <div class=" col-12"><button id = "login-submit" class="btn btn-outline-info" style="width: 100%;" type="submit"> Login </button></div>
                                             <div class=" col-12 mt-3"><small class="text-muted ml-2">
                                             <a href="{% url 'password_reset' %}">Forgot Password?</a>
                                           </small></div>

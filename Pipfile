@@ -29,6 +29,7 @@ redis = "*"
 honcho = "*"
 unittest-xml-reporting = "*"
 junit2html = "*"
+selenium = "*"
 
 [dev-packages]
 

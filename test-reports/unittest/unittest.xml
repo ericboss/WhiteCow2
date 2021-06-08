@@ -1,30 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-	<testsuite name="deal.tests.test_views.TestViews-20210606205309" tests="6" file="deal/tests/test_views.py" time="40.208" timestamp="2021-06-06T20:53:49" failures="0" errors="0" skipped="0">
-		<testcase classname="deal.tests.test_views.TestViews" name="test_add_deal_GET" time="7.445" timestamp="2021-06-06T20:53:16" file="deal/tests/test_views.py" line="38"/>
-		<testcase classname="deal.tests.test_views.TestViews" name="test_address_assets_GET" time="4.675" timestamp="2021-06-06T20:53:21" file="deal/tests/test_views.py" line="51"/>
-		<testcase classname="deal.tests.test_views.TestViews" name="test_address_assets_POST" time="23.423" timestamp="2021-06-06T20:53:44" file="deal/tests/test_views.py" line="60">
+	<testsuite name="deal.tests.test_views.TestViews-20210608103229" tests="6" file="deal/tests/test_views.py" time="30.075" timestamp="2021-06-08T10:32:59" failures="0" errors="0" skipped="0">
+		<testcase classname="deal.tests.test_views.TestViews" name="test_add_deal_GET" time="2.301" timestamp="2021-06-08T10:32:31" file="deal/tests/test_views.py" line="38"/>
+		<testcase classname="deal.tests.test_views.TestViews" name="test_address_assets_GET" time="1.894" timestamp="2021-06-08T10:32:33" file="deal/tests/test_views.py" line="51"/>
+		<testcase classname="deal.tests.test_views.TestViews" name="test_address_assets_POST" time="20.226" timestamp="2021-06-08T10:32:53" file="deal/tests/test_views.py" line="60">
 			<system-out><![CDATA[Data to make API call is :  {'city': 'New York City', 'state_code': 'NY', 'location': '', 'property_status': 'Sale', 'property_type': 'land'}
 computing Deal......
 
 Here is the Deal 
 
                                        primary_photo  ... matterport
-0  {'href': 'https://ap.rdcpix.com/6a8aca47e3d4ae...  ...      False
-1  {'href': 'https://ap.rdcpix.com/5a74978d82eccb...  ...      False
-2  {'href': 'https://ap.rdcpix.com/694c4c37963e0c...  ...      False
+0  {'href': 'https://ap.rdcpix.com/694c4c37963e0c...  ...      False
+1  {'href': 'https://ap.rdcpix.com/aec69c5d2103bb...  ...      False
+2  {'href': 'https://ap.rdcpix.com/78d2e7bf8960cc...  ...      False
 
 [3 rows x 23 columns]
 ]]></system-out>
 		</testcase>
-		<testcase classname="deal.tests.test_views.TestViews" name="test_deal_detail_GET" time="1.790" timestamp="2021-06-06T20:53:46" file="deal/tests/test_views.py" line="87"/>
-		<testcase classname="deal.tests.test_views.TestViews" name="test_index_GET" time="2.078" timestamp="2021-06-06T20:53:48" file="deal/tests/test_views.py" line="30"/>
-		<testcase classname="deal.tests.test_views.TestViews" name="test_save_deal_GET" time="0.796" timestamp="2021-06-06T20:53:49" file="deal/tests/test_views.py" line="77"/>
+		<testcase classname="deal.tests.test_views.TestViews" name="test_deal_detail_GET" time="2.219" timestamp="2021-06-08T10:32:56" file="deal/tests/test_views.py" line="87"/>
+		<testcase classname="deal.tests.test_views.TestViews" name="test_index_GET" time="1.943" timestamp="2021-06-08T10:32:57" file="deal/tests/test_views.py" line="30"/>
+		<testcase classname="deal.tests.test_views.TestViews" name="test_save_deal_GET" time="1.491" timestamp="2021-06-08T10:32:59" file="deal/tests/test_views.py" line="77"/>
 	</testsuite>
-	<testsuite name="deal.tests.test_urls.TestUrls-20210606205309" tests="4" file="deal/tests/test_urls.py" time="0.011" timestamp="2021-06-06T20:53:49" failures="0" errors="0" skipped="0">
-		<testcase classname="deal.tests.test_urls.TestUrls" name="test_add_deal" time="0.005" timestamp="2021-06-06T20:53:49" file="deal/tests/test_urls.py" line="13"/>
-		<testcase classname="deal.tests.test_urls.TestUrls" name="test_address_assets" time="0.002" timestamp="2021-06-06T20:53:49" file="deal/tests/test_urls.py" line="17"/>
-		<testcase classname="deal.tests.test_urls.TestUrls" name="test_index_is_resolved" time="0.002" timestamp="2021-06-06T20:53:49" file="deal/tests/test_urls.py" line="9"/>
-		<testcase classname="deal.tests.test_urls.TestUrls" name="test_save_deal" time="0.002" timestamp="2021-06-06T20:53:49" file="deal/tests/test_urls.py" line="21"/>
+	<testsuite name="deal.tests.test_urls.TestUrls-20210608103229" tests="4" file="deal/tests/test_urls.py" time="0.111" timestamp="2021-06-08T10:32:59" failures="0" errors="0" skipped="0">
+		<testcase classname="deal.tests.test_urls.TestUrls" name="test_add_deal" time="0.076" timestamp="2021-06-08T10:32:59" file="deal/tests/test_urls.py" line="13"/>
+		<testcase classname="deal.tests.test_urls.TestUrls" name="test_address_assets" time="0.003" timestamp="2021-06-08T10:32:59" file="deal/tests/test_urls.py" line="17"/>
+		<testcase classname="deal.tests.test_urls.TestUrls" name="test_index_is_resolved" time="0.013" timestamp="2021-06-08T10:32:59" file="deal/tests/test_urls.py" line="9"/>
+		<testcase classname="deal.tests.test_urls.TestUrls" name="test_save_deal" time="0.020" timestamp="2021-06-08T10:32:59" file="deal/tests/test_urls.py" line="21"/>
+	</testsuite>
+	<testsuite name="functional_tests.test_dashboard.TestIndexPage-20210608103229" tests="5" file="functional_tests/test_dashboard.py" time="88.169" timestamp="2021-06-08T10:34:32" failures="0" errors="0" skipped="0">
+		<testcase classname="functional_tests.test_dashboard.TestIndexPage" name="test_create_deal" time="21.371" timestamp="2021-06-08T10:33:23" file="functional_tests/test_dashboard.py" line="73"/>
+		<testcase classname="functional_tests.test_dashboard.TestIndexPage" name="test_create_deal_redirect_link" time="16.864" timestamp="2021-06-08T10:33:41" file="functional_tests/test_dashboard.py" line="46"/>
+		<testcase classname="functional_tests.test_dashboard.TestIndexPage" name="test_email_subscription_deal" time="18.014" timestamp="2021-06-08T10:33:59" file="functional_tests/test_dashboard.py" line="84"/>
+		<testcase classname="functional_tests.test_dashboard.TestIndexPage" name="test_email_subscription_redirect_link" time="15.916" timestamp="2021-06-08T10:34:16" file="functional_tests/test_dashboard.py" line="64"/>
+		<testcase classname="functional_tests.test_dashboard.TestIndexPage" name="test_view_deal_redirect_link" time="16.004" timestamp="2021-06-08T10:34:32" file="functional_tests/test_dashboard.py" line="55"/>
+	</testsuite>
+	<testsuite name="functional_tests.test_index.TestIndexPage-20210608103229" tests="4" file="functional_tests/test_index.py" time="53.428" timestamp="2021-06-08T10:35:39" failures="0" errors="0" skipped="0">
+		<testcase classname="functional_tests.test_index.TestIndexPage" name="test_display_signin_form" time="12.575" timestamp="2021-06-08T10:34:49" file="functional_tests/test_index.py" line="31"/>
+		<testcase classname="functional_tests.test_index.TestIndexPage" name="test_display_signup_form" time="13.969" timestamp="2021-06-08T10:35:04" file="functional_tests/test_index.py" line="40"/>
+		<testcase classname="functional_tests.test_index.TestIndexPage" name="test_index_page" time="9.811" timestamp="2021-06-08T10:35:21" file="functional_tests/test_index.py" line="22"/>
+		<testcase classname="functional_tests.test_index.TestIndexPage" name="test_login_redirect_dashboard" time="17.072" timestamp="2021-06-08T10:35:39" file="functional_tests/test_index.py" line="48"/>
 	</testsuite>
 </testsuites>
