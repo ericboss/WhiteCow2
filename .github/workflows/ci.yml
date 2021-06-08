@@ -10,6 +10,15 @@ jobs:
     - name: WhiteCow Unit test
       run: |
         python3 -m pip install --upgrade pipenv wheel
-        pip3 install --user celery, coverage,django,six,django-crispy-forms,django-heroku,pandas,selenium,unittest-xml-reporting,junit2html
+        pip3 install --user celery
+        pip3 install --user coverage
+        pip3 install --user django-crispy-forms
+        pip3 install --user six
+        pip3 install --user django
+        pip3 install --user django-heroku
+        pip3 install --user pandas
+        pip3 install --user selenium
+        pip3 install --user unittest-xml-reporting
+        pip3 install --user junit2html
         python3 manage.py test
 
